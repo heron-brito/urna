@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:urna/main.dart';
 // import 'package:flutter/src/foundation/key.dart';
 // import 'package:flutter/src/widgets/framework.dart';
@@ -363,9 +364,34 @@ class _LinhaDoisState extends State<LinhaDois> {
     widget.notifyParent();
   }
 
-  void _onPressedConfirma() {
+  void _onPressedConfirma() async {
     print('onPressedConfirma');
+    int new_counter;
     // onPressedConfirma();
+    final prefs = await SharedPreferences.getInstance();
+    final int? counter = prefs.getInt(algarismo_um.toString() + algarismo_dois.toString());
+    if (counter == null) {
+      new_counter = 1;
+      await prefs.setInt(algarismo_um.toString() + algarismo_dois.toString(), new_counter);
+    }else{
+      print('counter: ' + counter.toString());
+      new_counter = counter!.toInt() + 1;
+      await prefs.setInt(algarismo_um.toString() + algarismo_dois.toString(), new_counter);
+    }
+
+    // if (counter){
+    //     await prefs.setInt(algarismo_um.toString() + algarismo_dois.toString(), counter++);
+    // }
+
+
+    //imprime todos os dados
+    final keys = prefs.getKeys();
+    final prefsMap = Map<String, dynamic>();
+    for(String key in keys) {
+       prefsMap[key] = prefs.get(key);
+    }
+    print(prefsMap);
+
     vaiParaTelaInicial();
   }
 
