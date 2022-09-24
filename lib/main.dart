@@ -19,22 +19,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // title: 'Urna Eletrônica',
-      // theme: ThemeData(
-      //   primarySwatch: Colors.blue,
-      // ),
-      body: const MyHomePage(title: 'Cadastro'),
-      // debugShowCheckedModeBanner: false
-    );
-    // return MaterialApp(
-    //   title: 'Urna Eletrônica',
-    //   theme: ThemeData(
-    //     primarySwatch: Colors.blue,
-    //   ),
-    //   home: const MyHomePage(title: 'Cadastro'),
-    //   debugShowCheckedModeBanner: false
+    // return Scaffold(
+    //   // title: 'Urna Eletrônica',
+    //   // theme: ThemeData(
+    //   //   primarySwatch: Colors.blue,
+    //   // ),
+    //   body: const MyHomePage(title: 'Cadastro'),
+    //   // debugShowCheckedModeBanner: false
     // );
+    return MaterialApp(
+      title: 'Urna Eletrônica',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(title: 'Cadastro'),
+      debugShowCheckedModeBanner: false
+    );
   }
 }
 
@@ -75,15 +75,17 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text(widget.title)),
-      ),
+    //   appBar: AppBar(
+    //     title: Center(child: Text(widget.title)),
+    //   ),
       body: Column(
         children: [
           Row(
              mainAxisAlignment: MainAxisAlignment.end,
              children: <Widget>[
-              FloatingActionButton.small(onPressed: () {onPressedAdmin(context);}),
+              FloatingActionButton.small(
+                backgroundColor: Colors.grey.shade800,
+                onPressed: () {onPressedAdmin(context);}),
              ]
           ),
           Center(
@@ -120,8 +122,25 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: onPressedVotar, 
                   child: const Text(
                     'Votar !',
-                    style: TextStyle(fontSize: 25.0 ),              
-                  )),
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 200, 200, 200),
+                        fontSize: 25.0 ),              
+                  ),
+                  style: 
+                    TextButton.styleFrom(
+                        padding: const EdgeInsets.all(16.0),
+                        // primary: const Color.fromARGB(255, 200, 200, 200),
+                        primary: Colors.white,
+                        // backgroundColor: const Color.fromARGB(255, 20, 20, 20),
+                        backgroundColor: Colors.grey.shade800,
+                        // onPrimary: Colors.white,
+                        textStyle: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            // fontStyle: FontStyle.italic
+                        ),
+                      ), 
+                  ),
               ],
             ),
           ),

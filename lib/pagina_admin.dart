@@ -19,7 +19,7 @@ class _AdminPageState extends State<AdminPage> {
      print('_onPressedGotoHome');
      Navigator.push(
          context,
-         MaterialPageRoute(builder: (context) => MyHomePage(title: 'Cadastro',) ),
+         MaterialPageRoute(builder: (context) => const MyHomePage(title: 'Cadastro',) ),
      );
   }
 
@@ -78,7 +78,7 @@ class _AdminPageState extends State<AdminPage> {
                         ),
                       ),                    
                       onPressed: (){_clearPrefs();}, 
-                      child: Text(' Zerar toda votação ')
+                      child: const Text(' Zerar toda votação ')
                    ),
                   const Divider(
                     height: 100,
