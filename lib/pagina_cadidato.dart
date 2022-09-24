@@ -97,76 +97,91 @@ class _LadoEsquerdoSelecaoState extends State<LadoEsquerdoSelecao> {
     return Column( //Lado Esquero Número selecionado
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Center(child: Container(
-              height: 500,
-              // width: double.infinity,            
-              width: 700,            
-              decoration: BoxDecoration(
-                    borderRadius: new BorderRadius.circular(16.0),
-                    color: Colors.grey,
-                  ), 
-              child: Container(
-                height: 300,
-                width: 400,            
+        Center(
+          // child: FractionallySizedBox(
+          //     widthFactor: 0.8,
+          //     heightFactor: 0.8,
+          child: Expanded(
+            flex: 5,
+            child: Container(
+                height: 500,
+                // width: double.infinity,            
+                width: 700,            
+                // width: 200,
                 decoration: BoxDecoration(
-                      borderRadius: new BorderRadius.circular(1.0),
-                      border: Border.all(color: Colors.black),
-                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(16.0),
+                      color: Colors.grey,
                     ), 
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Column(
-                      // mainAxisAlignment: MainAxisAlignment.start,
+                child: 
+                //  FractionallySizedBox(
+                //    widthFactor: 0.7,
+                //    heightFactor: 0.7,                
+                 Expanded(
+                  //  flex: 5,
+                   child: Container(
+                    height: 300,
+                    width: 200,            
+                    decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(1.0),
+                          border: Border.all(color: Colors.black),
+                          color: Colors.white,
+                        ), 
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Divider(height: 100,),
-                        Text('PRESIDENTE', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),),
-                        Divider(height: 100,),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                        Column(
                           // mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text('Número:  ', style: TextStyle(fontSize: 25.0)),
-                            // Divider(height: 100,),
-                            Container(
-                                 decoration: BoxDecoration(
-                                       border: Border.all(color: Colors.black),
-                                     ), 
-                                child: Padding(
-                                  padding: const EdgeInsets.all(3.0),
-                                  // child: Text('2', style: TextStyle(fontSize: 25.0),),
-                                  child: Text(algarismo_um.toString(), style: TextStyle(fontSize: 25.0),),
-                                )),
-                            VerticalDivider(width: 10,),
-                            Container(
-                                 decoration: BoxDecoration(
-                                       border: Border.all(color: Colors.black),
-                                     ), 
-                                child: Padding(
-                                  padding: const EdgeInsets.all(3.0),
-                                  // child: Text('2', style: TextStyle(fontSize: 25.0),),
-                                  child: Text(algarismo_dois.toString(), style: TextStyle(fontSize: 25.0),),
-                                )),
-                            // Divider(height: 300,),
-                            VerticalDivider(width: 200,)
+                            Divider(height: 100,),
+                            Text('PRESIDENTE', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),),
+                            Divider(height: 100,),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              // mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text('Número:  ', style: TextStyle(fontSize: 25.0)),
+                                // Divider(height: 100,),
+                                Container(
+                                     decoration: BoxDecoration(
+                                           border: Border.all(color: Colors.black),
+                                         ), 
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(3.0),
+                                      // child: Text('2', style: TextStyle(fontSize: 25.0),),
+                                      child: Text(algarismo_um.toString(), style: TextStyle(fontSize: 25.0),),
+                                    )),
+                                VerticalDivider(width: 10,),
+                                Container(
+                                     decoration: BoxDecoration(
+                                           border: Border.all(color: Colors.black),
+                                         ), 
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(3.0),
+                                      // child: Text('2', style: TextStyle(fontSize: 25.0),),
+                                      child: Text(algarismo_dois.toString(), style: TextStyle(fontSize: 25.0),),
+                                    )),
+                                // Divider(height: 300,),
+                                VerticalDivider(width: 200,)
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            
+                            Divider(height: 100,),
+                            // Text('Tirica      ', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),),
+                            Text( candidato + '      ', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),),
+                            Divider(height: 50,),
+                            Image.asset(foto_cadidato, height: 200.0,),
+                            // Image.asset('asset/img/tiririca.webp', height: 200.0,),
                           ],
                         ),
                       ],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        
-                        Divider(height: 100,),
-                        // Text('Tirica      ', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),),
-                        Text( candidato + '      ', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),),
-                        Divider(height: 50,),
-                        Image.asset(foto_cadidato, height: 200.0,),
-                        // Image.asset('asset/img/tiririca.webp', height: 200.0,),
-                      ],
-                    ),
-                  ],
-                )))),
+                    )),
+                 )),
+          )),
       ],
     );
   }
@@ -193,60 +208,65 @@ class _LadoDireitoCandidatoState extends State<LadoDireitoCandidato> {
 
   @override
   Widget build(BuildContext context) {
-    return Column( // Lado Direito Candidato
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Center(child: Container(
-          height: 150,
-          width: 400,
-          decoration: BoxDecoration(
-                border: Border.all(color: Colors.black),
-                borderRadius: new BorderRadius.circular(1.0),
-                color: Colors.white,
-              ), 
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset('asset/img/brasao.png'),
-              Column(
-                children: [
-                  Divider(height:50 ),
-                  // Text(algarismo_um.toString() + algarismo_dois.toString() ),
-                  Text('JUSTIÇA ',  style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold ),),
-                  Text('TAMANDARÉ', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold ),),
-                ],
-              ),
-            ],
-          ),),),
-        Center(child: Container(
-              height: 450,
-              // width: double.infinity,            
-              width: 400,            
-              decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
-                    borderRadius: new BorderRadius.circular(1.0),
-                    color: Colors.grey.shade800,
-                    // color: Color.fromRGBO(217, 217, 200, 100)
-                  ), 
-              child: Column(
-                children: [
-                  Row(  children: [ Container(
-                                   height: 50,
-                                   color: Colors.white,
-                                  //  foregroundDecoration: BoxDecoration(color: Colors.white),
-                                  //  decoration: BoxDecoration(color: Colors.white),
-                                   child: Divider(height: 200, color: Colors.white)) ] ),
-                  Row(  children: [ LinhaUm( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
-                  Row(  children: [ LinhaDois( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
-                  Row(  children: [ LinhaTres( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
-                  Row(  children: [ LinhaUm( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
-                  // Row(  children: [ LinhaUm(),  ],         ),
-                  Row(  children: [ LinhaFinal(notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
-                  // Row(  children: [ LinhaTres(),  ],         ),
-                ],
-              ))),
-      ],
+    return Expanded(
+      flex: 5,
+      child: Column( // Lado Direito Candidato
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(child: Container(
+            height: 150,
+            width: 400,
+            decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black),
+                  borderRadius: new BorderRadius.circular(1.0),
+                  color: Colors.white,
+                ), 
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset('asset/img/brasao.png'),
+                Column(
+                  children: [
+                    Divider(height:50 ),
+                    // Text(algarismo_um.toString() + algarismo_dois.toString() ),
+                    Text('JUSTIÇA ',  style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold ),),
+                    Text('TAMANDARÉ', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold ),),
+                  ],
+                ),
+              ],
+            ),),),
+          Center(child: Container(
+                height: 450,
+                // width: double.infinity,            
+                width: 400,            
+                decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black),
+                      borderRadius: new BorderRadius.circular(1.0),
+                      color: Colors.grey.shade800,
+                      // color: Color.fromRGBO(217, 217, 200, 100)
+                    ), 
+                child: Column(
+                  children: [
+                    Row(  children: [ Container(
+                                     height: 50,
+                                     color: Colors.white,
+                                    //  foregroundDecoration: BoxDecoration(color: Colors.white),
+                                    //  decoration: BoxDecoration(color: Colors.white),
+                                     child: Divider(height: 200, color: Colors.white)) ] ),
+                    Row(  children: [ LinhaUm( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
+                    Row(  children: [ LinhaUm( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
+                    Row(  children: [ LinhaUm( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
+                    // Row(  children: [ LinhaDois( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
+                    // Row(  children: [ LinhaTres( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
+                    Row(  children: [ LinhaUm( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
+                    // Row(  children: [ LinhaUm(),  ],         ),
+                    Row(  children: [ LinhaFinal(notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
+                    // Row(  children: [ LinhaTres(),  ],         ),
+                  ],
+                ))),
+        ],
+      ),
     );
   }
 }
