@@ -25,6 +25,9 @@ class _PaginaCandidatoState extends State<PaginaCandidato> {
       if ( algarismo_um == 0 && algarismo_dois == 0){
         candidato = '';
         foto_cadidato ='asset/img/branco.png';
+      } else if ( algarismo_um == 9 && algarismo_dois == 5){
+        candidato = 'Redemocratização das urnas eletrônicas';
+        foto_cadidato ='asset/img/urna_eletronica.jpg';
       } else if ( algarismo_um == 1 && algarismo_dois == 1){
         candidato = 'Palhaço';
         foto_cadidato ='asset/img/palhaco.webp';
@@ -235,11 +238,11 @@ class _LadoDireitoCandidatoState extends State<LadoDireitoCandidato> {
                                   //  decoration: BoxDecoration(color: Colors.white),
                                    child: Divider(height: 200, color: Colors.white)) ] ),
                   Row(  children: [ LinhaUm( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
-                  Row(  children: [ LinhaUm( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
-                  Row(  children: [ LinhaUm( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
+                  Row(  children: [ LinhaDois( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
+                  Row(  children: [ LinhaTres( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
                   Row(  children: [ LinhaUm( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
                   // Row(  children: [ LinhaUm(),  ],         ),
-                  Row(  children: [ LinhaDois(notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
+                  Row(  children: [ LinhaFinal(notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
                   // Row(  children: [ LinhaTres(),  ],         ),
                 ],
               ))),
@@ -253,9 +256,6 @@ class _LadoDireitoCandidatoState extends State<LadoDireitoCandidato> {
 class LinhaUm extends StatefulWidget {
   final Function() notifyParent;
   LinhaUm({Key? key, required this.notifyParent}) : super(key: key);
-  // const LinhaUm({
-  //   Key? key,
-  // }) : super(key: key);
 
   @override
   State<LinhaUm> createState() => _LinhaUmState();
@@ -276,54 +276,124 @@ class _LinhaUmState extends State<LinhaUm> {
      });
   }
 
-  // void _onPressedCorrige() {
-  //   print('onPressedCorrige');
-  //   algarismo_um = 0;
-  //   algarismo_dois = 0;    
-  //   algarismo_um_pressionado = false;
-  //   widget.notifyParent();
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      // padding: const EdgeInsets.all(5),
       padding: const EdgeInsets.fromLTRB(80 ,0 ,80 ,0  ),
       child: Row(
-        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           IconButton(onPressed: (){_onPressedBotao(1);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
           VerticalDivider( width: 16, ),
           IconButton(onPressed: (){_onPressedBotao(2);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
           VerticalDivider( width: 16, ),
-          // Divider( height: 100, ),
           IconButton(onPressed: (){_onPressedBotao(3);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
         ],
       ),
     );
   }
 
-
-  // void onPressedBotao() {    
-    
-    // algarismo_um = 0 ;
-
-  // }
 }
+
+
 
 class LinhaDois extends StatefulWidget {
   final Function() notifyParent;
-  LinhaDois({Key? key, required this.notifyParent}) : super(key: key);  
-  // const LinhaDois({
-  //   Key? key,
-  // }) : super(key: key);
+  LinhaDois({Key? key, required this.notifyParent}) : super(key: key);
 
   @override
-  State<LinhaDois> createState() => _LinhaDoisState();
+  State<LinhaUm> createState() => _LinhaUmState();
 }
 
 class _LinhaDoisState extends State<LinhaDois> {
+
+  _onPressedBotao(int digito) {
+    setState(() {
+      print('onPressdBotao: ' + digito.toString());
+      if (algarismo_um_pressionado){
+        algarismo_dois = digito ;
+      }else{
+        algarismo_um = digito ;
+        algarismo_um_pressionado = true;
+      }
+      widget.notifyParent();
+     });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.fromLTRB(80 ,0 ,80 ,0  ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          IconButton(onPressed: (){_onPressedBotao(4);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
+          VerticalDivider( width: 16, ),
+          IconButton(onPressed: (){_onPressedBotao(5);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
+          VerticalDivider( width: 16, ),
+          IconButton(onPressed: (){_onPressedBotao(6);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
+        ],
+      ),
+    );
+  }
+
+}
+
+
+class LinhaTres extends StatefulWidget {
+  final Function() notifyParent;
+  LinhaTres({Key? key, required this.notifyParent}) : super(key: key);
+
+  @override
+  State<LinhaTres> createState() => _LinhaTresState();
+}
+
+class _LinhaTresState extends State<LinhaTres> {
+
+  _onPressedBotao(int digito) {
+    setState(() {
+      print('onPressdBotao: ' + digito.toString());
+      if (algarismo_um_pressionado){
+        algarismo_dois = digito ;
+      }else{
+        algarismo_um = digito ;
+        algarismo_um_pressionado = true;
+      }
+      widget.notifyParent();
+     });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.fromLTRB(80 ,0 ,80 ,0  ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          IconButton(onPressed: (){_onPressedBotao(7);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
+          VerticalDivider( width: 16, ),
+          IconButton(onPressed: (){_onPressedBotao(8);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
+          VerticalDivider( width: 16, ),
+          IconButton(onPressed: (){_onPressedBotao(9);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
+        ],
+      ),
+    );
+  }
+
+}
+
+
+
+
+class LinhaFinal extends StatefulWidget {
+  final Function() notifyParent;
+  LinhaFinal({Key? key, required this.notifyParent}) : super(key: key);  
+
+  @override
+  State<LinhaFinal> createState() => _LinhaFinalState();
+}
+
+class _LinhaFinalState extends State<LinhaFinal> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -401,15 +471,4 @@ class _LinhaDoisState extends State<LinhaDois> {
     MaterialPageRoute(builder: (context) => const MyApp() ),
   );
   } 
-}
-
-class LinhaTres extends StatelessWidget {
-  const LinhaTres({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text('Direita linha 3');
-  }
 }

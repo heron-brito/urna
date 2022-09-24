@@ -1,7 +1,5 @@
 // ignore_for_file: avoid_print
-
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:urna/pagina_admin.dart';
@@ -93,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: 
               <Widget>[
-                Divider( height: 200,),
+                Divider( height: 150,),
                 const Text(
                   'Eleitor, para votar é necessário preencher o seu e-mail',
                   style: TextStyle(fontSize: 25.0 ),              
