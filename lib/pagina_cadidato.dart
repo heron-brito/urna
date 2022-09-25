@@ -25,6 +25,9 @@ class _PaginaCandidatoState extends State<PaginaCandidato> {
       if ( algarismo_um == 0 && algarismo_dois == 0){
         candidato = '';
         foto_cadidato ='asset/img/branco.png';
+      } else if ( algarismo_um == 9 && algarismo_dois == 5){
+        candidato = 'A redemecratização das urnas eletrônicas';
+        foto_cadidato ='asset/img/democracia.png';
       } else if ( algarismo_um == 1 && algarismo_dois == 1){
         candidato = 'Palhaço';
         foto_cadidato ='asset/img/palhaco.webp';
@@ -99,14 +102,14 @@ class _LadoEsquerdoSelecaoState extends State<LadoEsquerdoSelecao> {
               // width: double.infinity,            
               width: 700,            
               decoration: BoxDecoration(
-                    borderRadius: new BorderRadius.circular(16.0),
+                    borderRadius: BorderRadius.circular(16.0),
                     color: Colors.grey,
                   ), 
               child: Container(
                 height: 300,
                 width: 400,            
                 decoration: BoxDecoration(
-                      borderRadius: new BorderRadius.circular(1.0),
+                      borderRadius: BorderRadius.circular(1.0),
                       border: Border.all(color: Colors.black),
                       color: Colors.white,
                     ), 
@@ -115,9 +118,10 @@ class _LadoEsquerdoSelecaoState extends State<LadoEsquerdoSelecao> {
                   children: [
                     Column(
                       // mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Divider(height: 100,),
-                        Text('PRESIDENTE', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),),
+                        Text('GRUPO', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),),
                         Divider(height: 100,),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -156,7 +160,15 @@ class _LadoEsquerdoSelecaoState extends State<LadoEsquerdoSelecao> {
                         
                         Divider(height: 100,),
                         // Text('Tirica      ', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),),
-                        Text( candidato + '      ', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),),
+                        FittedBox(
+                            fit: BoxFit.fitWidth,
+                            // fit: BoxFit.fitWidth,
+                            child: 
+                               Text( candidato ,  style: TextStyle(
+                                    // fontSize: 25.0, 
+                                    fontWeight: FontWeight.bold
+                                    ),)),
+                            //    Text( candidato + '      ', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),)),
                         Divider(height: 50,),
                         Image.asset(foto_cadidato, height: 200.0,),
                         // Image.asset('asset/img/tiririca.webp', height: 200.0,),
@@ -235,11 +247,14 @@ class _LadoDireitoCandidatoState extends State<LadoDireitoCandidato> {
                                   //  decoration: BoxDecoration(color: Colors.white),
                                    child: Divider(height: 200, color: Colors.white)) ] ),
                   Row(  children: [ LinhaUm( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
-                  Row(  children: [ LinhaUm( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
-                  Row(  children: [ LinhaUm( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
-                  Row(  children: [ LinhaUm( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
+                  Row(  children: [ LinhaDois( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
+                  Row(  children: [ LinhaTres( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
+                  Row(  children: [ LinhaQuatro( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
+                  // Row(  children: [ LinhaUm( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
+                  // Row(  children: [ LinhaUm( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
+                  // Row(  children: [ LinhaUm( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
                   // Row(  children: [ LinhaUm(),  ],         ),
-                  Row(  children: [ LinhaDois(notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
+                  Row(  children: [ LinhaDeBaixo(notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
                   // Row(  children: [ LinhaTres(),  ],         ),
                 ],
               ))),
@@ -253,9 +268,6 @@ class _LadoDireitoCandidatoState extends State<LadoDireitoCandidato> {
 class LinhaUm extends StatefulWidget {
   final Function() notifyParent;
   LinhaUm({Key? key, required this.notifyParent}) : super(key: key);
-  // const LinhaUm({
-  //   Key? key,
-  // }) : super(key: key);
 
   @override
   State<LinhaUm> createState() => _LinhaUmState();
@@ -276,54 +288,209 @@ class _LinhaUmState extends State<LinhaUm> {
      });
   }
 
-  // void _onPressedCorrige() {
-  //   print('onPressedCorrige');
-  //   algarismo_um = 0;
-  //   algarismo_dois = 0;    
-  //   algarismo_um_pressionado = false;
-  //   widget.notifyParent();
-  // }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      // padding: const EdgeInsets.all(5),
       padding: const EdgeInsets.fromLTRB(80 ,0 ,80 ,0  ),
       child: Row(
-        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          IconButton(onPressed: (){_onPressedBotao(1);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
+          Stack(  alignment: AlignmentDirectional.center , children: [ 
+                IconButton(onPressed: (){_onPressedBotao(1);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),
+                GestureDetector( onTap: (){_onPressedBotao(1);}, child: Text('1', style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 197, 197, 197)))),   ] ),          
           VerticalDivider( width: 16, ),
-          IconButton(onPressed: (){_onPressedBotao(2);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
+          Stack(  alignment: AlignmentDirectional.center , children: [ 
+                IconButton(onPressed: (){_onPressedBotao(2);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),
+                GestureDetector( onTap: (){_onPressedBotao(2);}, child: Text('2', style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 197, 197, 197)))),   ] ),          
           VerticalDivider( width: 16, ),
-          // Divider( height: 100, ),
-          IconButton(onPressed: (){_onPressedBotao(3);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
+          Stack(  alignment: AlignmentDirectional.center , children: [ 
+                IconButton(onPressed: (){_onPressedBotao(3);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),
+                GestureDetector( onTap: (){_onPressedBotao(3);}, child: Text('3', style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 197, 197, 197)))),   ] ),          
         ],
       ),
     );
   }
 
-
-  // void onPressedBotao() {    
-    
-    // algarismo_um = 0 ;
-
-  // }
 }
+
+
 
 class LinhaDois extends StatefulWidget {
   final Function() notifyParent;
-  LinhaDois({Key? key, required this.notifyParent}) : super(key: key);  
-  // const LinhaDois({
-  //   Key? key,
-  // }) : super(key: key);
+  LinhaDois({Key? key, required this.notifyParent}) : super(key: key);
 
   @override
   State<LinhaDois> createState() => _LinhaDoisState();
 }
 
 class _LinhaDoisState extends State<LinhaDois> {
+
+  _onPressedBotao(int digito) {
+    setState(() {
+      print('onPressdBotao: ' + digito.toString());
+      if (algarismo_um_pressionado){
+        algarismo_dois = digito ;
+      }else{
+        algarismo_um = digito ;
+        algarismo_um_pressionado = true;
+      }
+      widget.notifyParent();
+     });
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.fromLTRB(80 ,0 ,80 ,0  ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          // IconButton(onPressed: (){_onPressedBotao(4);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
+          // VerticalDivider( width: 16, ),
+          // IconButton(onPressed: (){_onPressedBotao(5);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
+          // VerticalDivider( width: 16, ),
+          // IconButton(onPressed: (){_onPressedBotao(6);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
+          Stack(  alignment: AlignmentDirectional.center , children: [ 
+                IconButton(onPressed: (){_onPressedBotao(4);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),
+                GestureDetector( onTap: (){_onPressedBotao(4);}, child: Text('4', style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 197, 197, 197)))),   ] ),          
+          VerticalDivider( width: 16, ),
+          Stack(  alignment: AlignmentDirectional.center , children: [ 
+                IconButton(onPressed: (){_onPressedBotao(5);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),
+                GestureDetector( onTap: (){_onPressedBotao(5);}, child: Text('5', style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 197, 197, 197)))),   ] ),          
+          VerticalDivider( width: 16, ),
+          Stack(  alignment: AlignmentDirectional.center , children: [ 
+                IconButton(onPressed: (){_onPressedBotao(6);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),
+                GestureDetector( onTap: (){_onPressedBotao(6);}, child: Text('6', style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 197, 197, 197)))),   ] ),           
+        ],
+      ),
+    );
+  }
+
+}
+
+
+
+class LinhaTres extends StatefulWidget {
+  final Function() notifyParent;
+  LinhaTres({Key? key, required this.notifyParent}) : super(key: key);
+
+  @override
+  State<LinhaTres> createState() => _LinhaTresState();
+}
+
+class _LinhaTresState extends State<LinhaTres> {
+
+  _onPressedBotao(int digito) {
+    setState(() {
+      print('onPressdBotao: ' + digito.toString());
+      if (algarismo_um_pressionado){
+        algarismo_dois = digito ;
+      }else{
+        algarismo_um = digito ;
+        algarismo_um_pressionado = true;
+      }
+      widget.notifyParent();
+     });
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.fromLTRB(80 ,0 ,80 ,0  ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          // IconButton(onPressed: (){_onPressedBotao(7);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
+          // VerticalDivider( width: 16, ),
+          // IconButton(onPressed: (){_onPressedBotao(8);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
+          // VerticalDivider( width: 16, ),
+          // IconButton(onPressed: (){_onPressedBotao(9);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
+          Stack(  alignment: AlignmentDirectional.center , children: [ 
+                IconButton(onPressed: (){_onPressedBotao(7);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),
+                GestureDetector( onTap: (){_onPressedBotao(7);}, child: Text('7', style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 197, 197, 197)))),   ] ),          
+          VerticalDivider( width: 16, ),
+          Stack(  alignment: AlignmentDirectional.center , children: [ 
+                IconButton(onPressed: (){_onPressedBotao(8);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),
+                GestureDetector( onTap: (){_onPressedBotao(8);}, child: Text('8', style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 197, 197, 197)))),   ] ),          
+          VerticalDivider( width: 16, ),
+          Stack(  alignment: AlignmentDirectional.center , children: [ 
+                IconButton(onPressed: (){_onPressedBotao(9);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),
+                GestureDetector( onTap: (){_onPressedBotao(9);}, child: Text('9', style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 197, 197, 197)))),   ] ),           
+        ],
+      ),
+    );
+  }
+
+}
+
+
+
+
+class LinhaQuatro extends StatefulWidget {
+  final Function() notifyParent;
+  LinhaQuatro({Key? key, required this.notifyParent}) : super(key: key);
+
+  @override
+  State<LinhaQuatro> createState() => _LinhaQuatroState();
+}
+
+class _LinhaQuatroState extends State<LinhaQuatro> {
+
+  _onPressedBotao(int digito) {
+    setState(() {
+      print('onPressdBotao: ' + digito.toString());
+      if (algarismo_um_pressionado){
+        algarismo_dois = digito ;
+      }else{
+        algarismo_um = digito ;
+        algarismo_um_pressionado = true;
+      }
+      widget.notifyParent();
+     });
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.fromLTRB(80 ,0 ,80 ,0  ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          // IconButton(onPressed: (){_onPressedBotao3(7);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
+          // Divider(height: 150,),
+          VerticalDivider( width: 80, ),
+          // IconButton(onPressed: (){_onPressedBotao(0);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
+          Stack(  alignment: AlignmentDirectional.center , children: [ 
+                IconButton(onPressed: (){_onPressedBotao(0);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),
+                GestureDetector( onTap: (){_onPressedBotao(0);}, child: Text('0', style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 197, 197, 197)))),   ] ),           
+          VerticalDivider( width: 16, ),
+          Divider(height: 110,),
+          // IconButton(onPressed: (){_onPressedBotao3(9);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
+        ],
+      ),
+    );
+  }
+
+}
+
+
+
+class LinhaDeBaixo extends StatefulWidget {
+  final Function() notifyParent;
+  LinhaDeBaixo({Key? key, required this.notifyParent}) : super(key: key);  
+  // const LinhaDois({
+  //   Key? key,
+  // }) : super(key: key);
+
+  @override
+  State<LinhaDeBaixo> createState() => _LinhaDeBaixo();
+}
+
+class _LinhaDeBaixo extends State<LinhaDeBaixo> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -334,8 +501,8 @@ class _LinhaDoisState extends State<LinhaDois> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // Image.asset('asset/img/btn_branco.png'),
-          VerticalDivider( width: 60, ),
-          IconButton(onPressed: _onPressedCancela, iconSize: 60, icon: Image.asset('asset/img/btn_branco.png')),
+          VerticalDivider( width: 110, ),
+          // IconButton(onPressed: _onPressedCancela, iconSize: 60, icon: Image.asset('asset/img/btn_branco.png')),
           VerticalDivider( width: 16, ),
           // Image.asset('asset/img/btn_corrige.png'),
           IconButton(onPressed: _onPressedCorrige, iconSize: 60, icon: Image.asset('asset/img/btn_corrige.png')),
@@ -403,13 +570,3 @@ class _LinhaDoisState extends State<LinhaDois> {
   } 
 }
 
-class LinhaTres extends StatelessWidget {
-  const LinhaTres({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text('Direita linha 3');
-  }
-}

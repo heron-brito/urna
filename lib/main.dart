@@ -83,9 +83,12 @@ class _MyHomePageState extends State<MyHomePage> {
           Row(
              mainAxisAlignment: MainAxisAlignment.end,
              children: <Widget>[
-              FloatingActionButton.small(
-                backgroundColor: Colors.grey.shade800,
-                onPressed: () {onPressedAdmin(context);}),
+              Padding(
+                padding: const EdgeInsets.all(25.0),
+                child: FloatingActionButton.small(
+                  backgroundColor: Colors.grey.shade800,
+                  onPressed: () {onPressedAdmin(context);}),
+              ),
              ]
           ),
           Center(
@@ -93,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: 
               <Widget>[
-                Divider( height: 200,),
+                Divider( height: 100, thickness: 0.1),
                 const Text(
                   'Eleitor, para votar é necessário preencher o seu e-mail',
                   style: TextStyle(fontSize: 25.0 ),              
