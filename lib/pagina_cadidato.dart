@@ -247,30 +247,31 @@ class _LadoDireitoCandidatoState extends State<LadoDireitoCandidato> {
     return Column( // Lado Direito Candidato
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        // Center(child: Container(
-        //   height: 150,
-        //   width: 400,
-        //   decoration: BoxDecoration(
-        //         border: Border.all(color: Colors.black),
-        //         borderRadius: new BorderRadius.circular(1.0),
-        //         color: Colors.white,
-        //       ), 
-          // child: Row(
-          //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          //   crossAxisAlignment: CrossAxisAlignment.center,
-          //   children: [
-          //     Image.asset('asset/img/brasao.png'),
-          //     Column(
-          //       children: [
-          //         Divider(height:50 , thickness: 0.1),
-          //         // Text(algarismo_um.toString() + algarismo_dois.toString() ),
-          //         Text('JUSTIÇA ',  style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold ),),
-          //         Text('TAMANDARÉ', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold ),),
-          //       ],
-          //     ),
-          //   ],
-          // ),
-          // ),),
+        // Tablet ou Celular 
+        Center(child: Container(
+          height: 150,
+          width: 400,
+          decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                borderRadius: new BorderRadius.circular(1.0),
+                color: Colors.white,
+              ), 
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset('asset/img/brasao.png'),
+              Column(
+                children: [
+                  Divider(height:50 , thickness: 0.1),
+                  // Text(algarismo_um.toString() + algarismo_dois.toString() ),
+                  Text('JUSTIÇA ',  style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold ),),
+                  Text('TAMANDARÉ', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold ),),
+                ],
+              ),
+            ],
+          ),
+          ),),
         Center(child: Container(
               height: 450,
               // width: double.infinity,            
