@@ -247,7 +247,7 @@ class _LadoDireitoCandidatoState extends State<LadoDireitoCandidato> {
     return Column( // Lado Direito Candidato
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        // Tablet ou Celular 
+        // Tablet ou Celular -> ate container
         Center(child: Container(
           height: 150,
           width: 400,
