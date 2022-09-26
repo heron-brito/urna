@@ -12,6 +12,8 @@ import 'package:urna/pagina_cadidato.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
+
+  // List<String> emails = ['a@a.com', ];
 }
 
 class MyApp extends StatelessWidget {
@@ -279,9 +281,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
     } else {
-       print('email inválido: ' + myController.text);
+       print('email inválido: ${myController.text}');
        final List<String>? emails = prefs.getStringList('emails');
-       print('email_list: ' + emails.toString());
+       print('email_list: $emails');
+       // ignore: prefer_const_constructors
        final snackBar = SnackBar(
                content: const Text('Preencha o e-mail corretamente!'),
         );

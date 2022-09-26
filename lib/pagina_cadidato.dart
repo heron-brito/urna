@@ -55,7 +55,7 @@ class _PaginaCandidatoState extends State<PaginaCandidato> {
     // return Container(
       body: Container(
         decoration: BoxDecoration(
-              borderRadius: new BorderRadius.circular(16.0),
+              borderRadius: BorderRadius.circular(16.0),
               // color: Colors.grey,
               color: Color.fromRGBO(217, 217, 200, 100)
               ),        
@@ -83,10 +83,6 @@ class LadoEsquerdoSelecao extends StatefulWidget {
 }
 
 class _LadoEsquerdoSelecaoState extends State<LadoEsquerdoSelecao> {
-  // String algarismo_um = '2';
-  //candidato = 'Tiririca';
-
-  
 
   refresh() {
     setState(() {});
@@ -94,89 +90,99 @@ class _LadoEsquerdoSelecaoState extends State<LadoEsquerdoSelecao> {
 
   @override
   Widget build(BuildContext context) {
-    return Column( //Lado Esquero Número selecionado
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Center(child: Container(
-              height: 500,
-              // width: double.infinity,            
-              width: 700,            
-              decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16.0),
-                    color: Colors.grey,
-                  ), 
-              child: Container(
-                height: 300,
-                width: 400,            
+    return Expanded(
+      child: Column( //Lado Esquero Número selecionado
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Center(child: Container(
+                height: 500,
+                // width: double.infinity,            
+                // width: 700,            
                 decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(1.0),
-                      border: Border.all(color: Colors.black),
-                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(16.0),
+                      color: Colors.grey,
                     ), 
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Column(
-                      // mainAxisAlignment: MainAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Divider(height: 100,),
-                        Text('GRUPO', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),),
-                        Divider(height: 100,),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                child: Container(
+                  height: 300,
+                //   width: 400,            
+                  decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(1.0),
+                        border: Border.all(color: Colors.black),
+                        color: Colors.white,
+                      ), 
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                        child: Column(
                           // mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text('Número:  ', style: TextStyle(fontSize: 25.0)),
-                            // Divider(height: 100,),
-                            Container(
-                                 decoration: BoxDecoration(
-                                       border: Border.all(color: Colors.black),
-                                     ), 
-                                child: Padding(
-                                  padding: const EdgeInsets.all(3.0),
-                                  // child: Text('2', style: TextStyle(fontSize: 25.0),),
-                                  child: Text(algarismo_um.toString(), style: TextStyle(fontSize: 25.0),),
-                                )),
-                            VerticalDivider(width: 10,),
-                            Container(
-                                 decoration: BoxDecoration(
-                                       border: Border.all(color: Colors.black),
-                                     ), 
-                                child: Padding(
-                                  padding: const EdgeInsets.all(3.0),
-                                  // child: Text('2', style: TextStyle(fontSize: 25.0),),
-                                  child: Text(algarismo_dois.toString(), style: TextStyle(fontSize: 25.0),),
-                                )),
-                            // Divider(height: 300,),
-                            VerticalDivider(width: 200,)
+                            Divider(height: 100, thickness: 0.1),
+                            Text('GRUPO', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),),
+                            Divider(height: 100, thickness: 0.1),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              // mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text('Número:  ', style: TextStyle(fontSize: 25.0)),
+                                // Divider(height: 100,),
+                                Container(
+                                     decoration: BoxDecoration(
+                                           border: Border.all(color: Colors.black),
+                                         ), 
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(3.0),
+                                      // child: Text('2', style: TextStyle(fontSize: 25.0),),
+                                      child: Text(algarismo_um.toString(), style: TextStyle(fontSize: 25.0),),
+                                    )),
+                                VerticalDivider(width: 10, thickness: 0.1),
+                                Container(
+                                     decoration: BoxDecoration(
+                                           border: Border.all(color: Colors.black),
+                                         ), 
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(3.0),
+                                      // child: Text('2', style: TextStyle(fontSize: 25.0),),
+                                      child: Text(algarismo_dois.toString(), style: TextStyle(fontSize: 25.0),),
+                                    )),
+                                // Divider(height: 300,),
+                                VerticalDivider(width: 200, thickness: 0.1)
+                              ],
+                            ),
                           ],
                         ),
-                      ],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        
-                        Divider(height: 100,),
-                        // Text('Tirica      ', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),),
-                        FittedBox(
-                            fit: BoxFit.fitWidth,
-                            // fit: BoxFit.fitWidth,
-                            child: 
-                               Text( candidato ,  style: TextStyle(
-                                    // fontSize: 25.0, 
-                                    fontWeight: FontWeight.bold
-                                    ),)),
-                            //    Text( candidato + '      ', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),)),
-                        Divider(height: 50,),
-                        Image.asset(foto_cadidato, height: 200.0,),
-                        // Image.asset('asset/img/tiririca.webp', height: 200.0,),
-                      ],
-                    ),
-                  ],
-                )))),
-      ],
+                      ),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            
+                            Divider(height: 100, thickness: 0.1),
+                            // Text('Tirica      ', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),),
+                            FittedBox(
+                                // fit: BoxFit.fitWidth,
+                                fit: BoxFit.fitWidth,
+                                child: 
+                                   ConstrainedBox(
+                                     constraints: BoxConstraints(minWidth: 1, minHeight: 1), // here
+                                     child: Text( candidato ,  style: TextStyle(
+                                          // fontSize: 25.0, 
+                                          fontWeight: FontWeight.bold
+                                          ),),
+                                   ),
+                                 ),
+                                //    Text( candidato + '      ', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),)),
+                            Divider(height: 50, thickness: 0.1),
+                            Image.asset(foto_cadidato, height: 200.0,),
+                            // Image.asset('asset/img/tiririca.webp', height: 200.0,),
+                          ],
+                        ),
+                      ),
+                    ],
+                  )))),
+        ],
+      ),
     );
   }
  
@@ -220,7 +226,7 @@ class _LadoDireitoCandidatoState extends State<LadoDireitoCandidato> {
               Image.asset('asset/img/brasao.png'),
               Column(
                 children: [
-                  Divider(height:50 ),
+                  Divider(height:50 , thickness: 0.1),
                   // Text(algarismo_um.toString() + algarismo_dois.toString() ),
                   Text('JUSTIÇA ',  style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold ),),
                   Text('TAMANDARÉ', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold ),),
@@ -245,7 +251,7 @@ class _LadoDireitoCandidatoState extends State<LadoDireitoCandidato> {
                                    color: Colors.white,
                                   //  foregroundDecoration: BoxDecoration(color: Colors.white),
                                   //  decoration: BoxDecoration(color: Colors.white),
-                                   child: Divider(height: 200, color: Colors.white)) ] ),
+                                   child: Divider(height: 200, thickness: 0.1, color: Colors.white)) ] ),
                   Row(  children: [ LinhaUm( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
                   Row(  children: [ LinhaDois( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
                   Row(  children: [ LinhaTres( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
@@ -299,11 +305,11 @@ class _LinhaUmState extends State<LinhaUm> {
           Stack(  alignment: AlignmentDirectional.center , children: [ 
                 IconButton(onPressed: (){_onPressedBotao(1);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),
                 GestureDetector( onTap: (){_onPressedBotao(1);}, child: Text('1', style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 197, 197, 197)))),   ] ),          
-          VerticalDivider( width: 16, ),
+          VerticalDivider( width: 16, thickness: 0.1 ),
           Stack(  alignment: AlignmentDirectional.center , children: [ 
                 IconButton(onPressed: (){_onPressedBotao(2);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),
                 GestureDetector( onTap: (){_onPressedBotao(2);}, child: Text('2', style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 197, 197, 197)))),   ] ),          
-          VerticalDivider( width: 16, ),
+          VerticalDivider( width: 16, thickness: 0.1 ),
           Stack(  alignment: AlignmentDirectional.center , children: [ 
                 IconButton(onPressed: (){_onPressedBotao(3);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),
                 GestureDetector( onTap: (){_onPressedBotao(3);}, child: Text('3', style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 197, 197, 197)))),   ] ),          
@@ -468,7 +474,7 @@ class _LinhaQuatroState extends State<LinhaQuatro> {
                 IconButton(onPressed: (){_onPressedBotao(0);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),
                 GestureDetector( onTap: (){_onPressedBotao(0);}, child: Text('0', style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 197, 197, 197)))),   ] ),           
           VerticalDivider( width: 16, ),
-          Divider(height: 110,),
+          Divider(height: 50,),
           // IconButton(onPressed: (){_onPressedBotao3(9);}, iconSize: 50, icon: Image.asset('asset/img/urna_notao_01.png')),          
         ],
       ),
@@ -482,9 +488,6 @@ class _LinhaQuatroState extends State<LinhaQuatro> {
 class LinhaDeBaixo extends StatefulWidget {
   final Function() notifyParent;
   LinhaDeBaixo({Key? key, required this.notifyParent}) : super(key: key);  
-  // const LinhaDois({
-  //   Key? key,
-  // }) : super(key: key);
 
   @override
   State<LinhaDeBaixo> createState() => _LinhaDeBaixo();
@@ -546,10 +549,6 @@ class _LinhaDeBaixo extends State<LinhaDeBaixo> {
       await prefs.setInt(algarismo_um.toString() + algarismo_dois.toString(), new_counter);
     }
 
-    // if (counter){
-    //     await prefs.setInt(algarismo_um.toString() + algarismo_dois.toString(), counter++);
-    // }
-
 
     //imprime todos os dados
     final keys = prefs.getKeys();
@@ -559,8 +558,10 @@ class _LinhaDeBaixo extends State<LinhaDeBaixo> {
     }
     print(prefsMap);
 
+    _onPressedCorrige();
     vaiParaTelaInicial();
   }
+
 
   void vaiParaTelaInicial() {
     Navigator.push(
