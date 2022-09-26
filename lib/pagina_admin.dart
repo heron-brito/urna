@@ -18,6 +18,14 @@ class _AdminPageState extends State<AdminPage> {
   // List<String> emails = [];  
   List<String> emails = ['a@a.com', ];
   String qtdVotantes = '';
+  String candidato_17 = '';
+  String candidato_18 = '';
+  String candidato_25 = '';
+  String candidato_31 = '';
+  String candidato_76 = '';
+  String candidato_95 = '';
+  String candidato_11 = '';
+  String candidato_22 = '';
   
   // String get qtd_votantes => emails.length.toString();
   // String qtd_votantes = emails.length.toString();
@@ -60,7 +68,15 @@ class _AdminPageState extends State<AdminPage> {
     //  emails = prefs.get('emails') ;
     //  qtdVotantes = emails.length.toString();
     // if (emails != null) {
-    //  qtdVotantes = emails.length;
+     qtdVotantes = emails.length.toString();
+     candidato_17 = prefs.getInt('17').toString() ?? '' ;
+     candidato_18 = prefs.getInt('18').toString() ?? '' ;
+     candidato_25 = prefs.getInt('25').toString() ?? '' ;
+     candidato_31 = prefs.getInt('31').toString() ?? '' ;
+     candidato_76 = prefs.getInt('76').toString() ?? '' ;
+     candidato_95 = prefs.getInt('95').toString() ?? '' ;
+     candidato_11 = prefs.getInt('11').toString() ?? '' ;
+     candidato_22 = prefs.getInt('22').toString() ?? '' ;
     //  print('qtd eleitores: $qtdVotantes}');
 
     // }
@@ -71,9 +87,12 @@ class _AdminPageState extends State<AdminPage> {
 
   // ignore: non_constant_identifier_names
   _listaVotantes() async{
-    print('_listaVotantes');
-    await _loadSharePrefs();    
-    print('emails: ${emails}');
+    setState(() {
+       print('_listaVotantes');
+        _loadSharePrefs();    
+       print('emails: ${emails}');
+      
+    });
   }
 
   _clearPrefs() async{
@@ -96,10 +115,22 @@ class _AdminPageState extends State<AdminPage> {
               height: 50,
               thickness: 0.1,
             ),
-            Text( qtdVotantes ),
+            // Text( qtdVotantes ),
             Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+
+                  // Heron teste Future
+                  Text('Tela de apuração'),
+                  Text('Quantidade de eleitores: ${qtdVotantes}'),
+                  Text('Grupo 17 : ${candidato_17}'),
+                  Text('Grupo 18 : ${candidato_18}'),
+                  Text('Grupo 25 : ${candidato_25}'),
+                  Text('Grupo 31 : ${candidato_31}'),
+                  Text('Grupo 76 : ${candidato_76}'),
+                  Text('Grupo 95 : ${candidato_95}'),
+                  Text('Grupo 11 : ${candidato_11}'),
+                  Text('Grupo 22 : ${candidato_22}'),
 
                   SizedBox(
                     height: 200,
@@ -131,8 +162,9 @@ class _AdminPageState extends State<AdminPage> {
                         ),
                       ),                    
                       onPressed: (){_listaVotantes();}, 
-                      child: const Text(' Lista ')
+                      child: const Text(' Apura a votação ')
                    ),                  
+                   Divider(height: 50,),
                    TextButton(
                       style: TextButton.styleFrom(
                         primary: const Color.fromARGB(255, 200, 200, 200),

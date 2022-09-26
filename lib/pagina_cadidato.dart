@@ -28,6 +28,21 @@ class _PaginaCandidatoState extends State<PaginaCandidato> {
       } else if ( algarismo_um == 9 && algarismo_dois == 5){
         candidato = 'A redemecratização das urnas eletrônicas';
         foto_cadidato ='asset/img/democracia.png';
+      } else if ( algarismo_um == 3 && algarismo_dois == 1){
+        candidato = 'A importância dos alimentos saudáveis na educação';
+        foto_cadidato ='asset/img/ciência.jpg';        
+      } else if ( algarismo_um == 7 && algarismo_dois == 6){
+        candidato = 'Tecnologia na agricultura';
+        foto_cadidato ='asset/img/agricultura.jfif'; 
+      } else if ( algarismo_um == 2 && algarismo_dois == 5){
+        candidato = 'Como o investimento na ciência impulsiona na democracia';
+        foto_cadidato ='asset/img/alimentos saudaveis.jfif'; 
+      } else if ( algarismo_um == 1 && algarismo_dois == 8){
+        candidato = 'A democracia e o desenvolvimento sustentável da população';
+        foto_cadidato ='asset/img/sustentabilidade.jfif';
+      } else if ( algarismo_um == 1 && algarismo_dois == 7){
+        candidato = 'A democratização da vacina e o projeto SUS';
+        foto_cadidato ='asset/img/vacina.jpg';
       } else if ( algarismo_um == 1 && algarismo_dois == 1){
         candidato = 'Palhaço';
         foto_cadidato ='asset/img/palhaco.webp';
@@ -119,7 +134,7 @@ class _LadoEsquerdoSelecaoState extends State<LadoEsquerdoSelecao> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Divider(height: 100, thickness: 0.1),
-                            Text('GRUPO', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),),
+                            Text('GRUPO:', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),),
                             Divider(height: 100, thickness: 0.1),
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -211,29 +226,30 @@ class _LadoDireitoCandidatoState extends State<LadoDireitoCandidato> {
     return Column( // Lado Direito Candidato
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Center(child: Container(
-          height: 150,
-          width: 400,
-          decoration: BoxDecoration(
-                border: Border.all(color: Colors.black),
-                borderRadius: new BorderRadius.circular(1.0),
-                color: Colors.white,
-              ), 
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset('asset/img/brasao.png'),
-              Column(
-                children: [
-                  Divider(height:50 , thickness: 0.1),
-                  // Text(algarismo_um.toString() + algarismo_dois.toString() ),
-                  Text('JUSTIÇA ',  style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold ),),
-                  Text('TAMANDARÉ', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold ),),
-                ],
-              ),
-            ],
-          ),),),
+        // Center(child: Container(
+        //   height: 150,
+        //   width: 400,
+        //   decoration: BoxDecoration(
+        //         border: Border.all(color: Colors.black),
+        //         borderRadius: new BorderRadius.circular(1.0),
+        //         color: Colors.white,
+        //       ), 
+          // child: Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //   crossAxisAlignment: CrossAxisAlignment.center,
+          //   children: [
+          //     Image.asset('asset/img/brasao.png'),
+          //     Column(
+          //       children: [
+          //         Divider(height:50 , thickness: 0.1),
+          //         // Text(algarismo_um.toString() + algarismo_dois.toString() ),
+          //         Text('JUSTIÇA ',  style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold ),),
+          //         Text('TAMANDARÉ', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold ),),
+          //       ],
+          //     ),
+          //   ],
+          // ),
+          // ),),
         Center(child: Container(
               height: 450,
               // width: double.infinity,            
@@ -326,7 +342,7 @@ class LinhaDois extends StatefulWidget {
   LinhaDois({Key? key, required this.notifyParent}) : super(key: key);
 
   @override
-  State<LinhaUm> createState() => _LinhaUmState();
+  State<LinhaDois> createState() => _LinhaDoisState();
 }
 
 class _LinhaDoisState extends State<LinhaDois> {
