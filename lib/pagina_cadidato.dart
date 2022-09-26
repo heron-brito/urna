@@ -1,8 +1,15 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:urna/main.dart';
+// import 'package:audioplayers_windows/'
+// import 'package:audioplayers/audioplayers.dart';
+// import 'package:audioplayers/audioplayers.dart';
+// import 'package:audioplayers/audio_cache.dart';
+// import 'package:just_audio/just_audio.dart';
 // import 'package:flutter/src/foundation/key.dart';
 // import 'package:flutter/src/widgets/framework.dart';
 
@@ -43,7 +50,7 @@ class _PaginaCandidatoState extends State<PaginaCandidato> {
       } else if ( algarismo_um == 1 && algarismo_dois == 7){
         candidato = 'A democratização da vacina e o projeto SUS';
         foto_cadidato ='asset/img/vacina.jpg';
-      } else if ( algarismo_um == 1 && algarismo_dois == 1){
+      } else if ( algarismo_um == 1 && algarismo_dois == 3){
         candidato = 'Palhaço';
         foto_cadidato ='asset/img/palhaco.webp';
       } else if ( algarismo_um == 2 && algarismo_dois == 2){
@@ -59,6 +66,20 @@ class _PaginaCandidatoState extends State<PaginaCandidato> {
       }
     });
   }
+
+
+  // late AudioPlayer player;
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   player = AudioPlayer();
+  // }
+  // @override
+  // void dispose() {
+  //   player.dispose();
+  //   super.dispose();
+  // }
+
 
   @override
   Widget build(BuildContext context) {
@@ -297,7 +318,33 @@ class LinhaUm extends StatefulWidget {
 
 class _LinhaUmState extends State<LinhaUm> {
 
+  // late AudioPlayer player;
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   player = AudioPlayer();
+  // }
+  // @override
+  // void dispose() {
+  //   player.dispose();
+  //   super.dispose();
+  // }
+
+
+  void _tocaSomBotao() async {
+    // final player = AudioPlayer();
+    // await player.play(AssetSource('sounds/fim.wav'));    
+
+    // player.play(UrlSource('asset/img/fim.m4a'));
+    // await player.play(AssetSource('asset/img/fim.m4a'));    
+    // await player.play(AssetSource('img/fim.m4a'));    
+
+    // await player.setAsset('assets/soungs/fim.wav');
+    // player.play();
+  }
+
   _onPressedBotao(int digito) {
+    _tocaSomBotao();
     setState(() {
       print('onPressdBotao: ' + digito.toString());
       if (algarismo_um_pressionado){
@@ -546,9 +593,22 @@ class _LinhaDeBaixo extends State<LinhaDeBaixo> {
     widget.notifyParent();
   }
 
+  void _tocaSom() async {
+    // final player = AudioPlayer();
+    // player.play(UrlSource('asset/img/fim.m4a'));
+    // await player.play(AssetSource('sounds/note1.wave'));    
+  }
+
   void _onPressedConfirma() async {
     print('onPressedConfirma');
     int new_counter;
+    String grupo_string;
+    int grupo;
+    grupo_string =  '${algarismo_um.toString()}${algarismo_dois.toString()}' ;
+    print(grupo_string);
+    grupo = int.parse(grupo_string);
+    print(grupo);
+
     // onPressedConfirma();
     final prefs = await SharedPreferences.getInstance();
     final int? counter = prefs.getInt(algarismo_um.toString() + algarismo_dois.toString());
@@ -570,8 +630,17 @@ class _LinhaDeBaixo extends State<LinhaDeBaixo> {
     }
     print(prefsMap);
 
-    _onPressedCorrige();
-    vaiParaTelaInicial();
+    if ( grupo == 17 || grupo == 18 || grupo == 25 || grupo == 31 || grupo == 76 || grupo == 95) {
+      _onPressedCorrige();
+      // _tocaSom();
+      // sleep(Duration(seconds: 2) );
+      vaiParaTelaInicial();
+    } else {
+       final snackBar = SnackBar(
+               content: const Text('Candidato inválido  !!!'),
+        );
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }
   }
 
 

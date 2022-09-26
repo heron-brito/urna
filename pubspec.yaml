@@ -39,6 +39,9 @@ dependencies:
   # sqflite: ^2.0.1 #stable version at the time of publishing this article
   # path_provider: ^2.0.11 #stable version at the time of publishing this article
   shared_preferences: ^2.0.15
+  # just_audio: ^0.9.13
+  # audioplayers: ^1.0.1
+  # audioplayers_windows: ^1.0.0
 
 dev_dependencies:
   flutter_test:

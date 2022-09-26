@@ -26,6 +26,7 @@ class _AdminPageState extends State<AdminPage> {
   String candidato_95 = '';
   String candidato_11 = '';
   String candidato_22 = '';
+  String candidato_00 = '';
   
   // String get qtd_votantes => emails.length.toString();
   // String qtd_votantes = emails.length.toString();
@@ -76,7 +77,7 @@ class _AdminPageState extends State<AdminPage> {
      candidato_76 = prefs.getInt('76').toString() ?? '' ;
      candidato_95 = prefs.getInt('95').toString() ?? '' ;
      candidato_11 = prefs.getInt('11').toString() ?? '' ;
-     candidato_22 = prefs.getInt('22').toString() ?? '' ;
+     candidato_00 = prefs.getInt('00').toString() ?? '' ;
     //  print('qtd eleitores: $qtdVotantes}');
 
     // }
@@ -131,6 +132,7 @@ class _AdminPageState extends State<AdminPage> {
                   Text('Grupo 95 : ${candidato_95}'),
                   Text('Grupo 11 : ${candidato_11}'),
                   Text('Grupo 22 : ${candidato_22}'),
+                  Text('Grupo 00 : ${candidato_00}'),
 
                   SizedBox(
                     height: 200,
@@ -164,7 +166,7 @@ class _AdminPageState extends State<AdminPage> {
                       onPressed: (){_listaVotantes();}, 
                       child: const Text(' Apura a votação ')
                    ),                  
-                   Divider(height: 50,),
+                   Divider(height: 30, thickness: 0.1,),
                    TextButton(
                       style: TextButton.styleFrom(
                         primary: const Color.fromARGB(255, 200, 200, 200),
@@ -180,7 +182,7 @@ class _AdminPageState extends State<AdminPage> {
                       child: const Text(' Zerar toda votação ')
                    ),
                   const Divider(
-                    height: 50,
+                    height: 30,
                     thickness: 0.1,
                   ),
                    TextButton(
