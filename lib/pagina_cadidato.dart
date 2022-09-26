@@ -294,7 +294,6 @@ class _LinhaUmState extends State<LinhaUm> {
      });
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -327,7 +326,7 @@ class LinhaDois extends StatefulWidget {
   LinhaDois({Key? key, required this.notifyParent}) : super(key: key);
 
   @override
-  State<LinhaDois> createState() => _LinhaDoisState();
+  State<LinhaUm> createState() => _LinhaUmState();
 }
 
 class _LinhaDoisState extends State<LinhaDois> {
@@ -344,7 +343,6 @@ class _LinhaDoisState extends State<LinhaDois> {
       widget.notifyParent();
      });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -377,7 +375,6 @@ class _LinhaDoisState extends State<LinhaDois> {
 }
 
 
-
 class LinhaTres extends StatefulWidget {
   final Function() notifyParent;
   LinhaTres({Key? key, required this.notifyParent}) : super(key: key);
@@ -400,7 +397,6 @@ class _LinhaTresState extends State<LinhaTres> {
       widget.notifyParent();
      });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -570,4 +566,3 @@ class _LinhaDeBaixo extends State<LinhaDeBaixo> {
   );
   } 
 }
-
