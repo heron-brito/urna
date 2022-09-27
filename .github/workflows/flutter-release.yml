@@ -45,5 +45,8 @@ jobs:
       - name: Run tests
         run: flutter test
 
+     - name: Build Android Apk
+        run: flutter build apk     
+
       - name: Build Android App Bundle
         run: flutter build appbundle        
