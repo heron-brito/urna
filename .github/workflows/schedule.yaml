@@ -1,28 +1,7 @@
 name: Flutter Manual Release
 on:
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
-        type: choice
-        options:
-        - info
-        - warning
-        - debug
-      tags:
-        description: 'Test scenario tags'
-        required: false
-        default: true
-        type: boolean
-      environment:
-        description: 'Environment to run tests against'
-        type: environment
-        required: true
-# on:
-#   schedule:
-#     cron: '30 5 * * 1'          
+  schedule:
+    cron: '30 5 * * 1'          
 
 jobs:
   log-the-inputs:
