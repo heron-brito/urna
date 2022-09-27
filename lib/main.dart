@@ -13,10 +13,10 @@ void main() {
 
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
     setWindowTitle('Urna Eletrônica');
+    // setWindowMaxSize(const Size(1280, 800)); //Tablet Galaxy 10.1
     // setWindowMinSize(const Size(800, 1280)); //Tablet Galaxy 10.1
-    setWindowMaxSize(const Size(1280, 800)); //Tablet Galaxy 10.1
     // setWindowMinSize(const Size(320, 200)); //Tablet Galaxy 10.1
-    // setWindowMaxSize(Size.infinite);
+    setWindowMaxSize(Size.infinite);
   }
 
   runApp(const MyApp());
