@@ -2,9 +2,9 @@ name: Flutter release
 on:
   release:
     types: [published]
-  # push:
+  push:
   #   branches: [ "main" ]
-  # pull_request:
+  pull_request:
   #   branches: [ "main" , "versao-1.0", "versao-2.0" , "versao-2.1"]    
 jobs:
   build:
