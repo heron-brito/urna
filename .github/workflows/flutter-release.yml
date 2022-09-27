@@ -18,7 +18,7 @@ on:
   #   branches: [ "main" , "versao-1.0", "versao-2.0" , "versao-2.1"]    
 on:
   schedule:
-    - cron: '30 5 * * 1'  
+    cron: '30 5 * * 1'  
 on: workflow_dispatch # Manual    
 jobs:
   release:
