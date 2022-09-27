@@ -7,8 +7,8 @@ on:
   pull_request:
   #   branches: [ "main" , "versao-1.0", "versao-2.0" , "versao-2.1"]    
 jobs:
-  build:
-    name: Test, build and release
+  dependences:
+    name: Download and install depedency
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,6 +24,10 @@ jobs:
           channel: beta
       - name: Flutter version
         run: flutter --version
+
+  build:
+    name: Test, build and release
+    runs-on: ubuntu-latest
       - name: Cache pub dependencies
         uses: actions/cache@v2
         with:
@@ -38,7 +42,15 @@ jobs:
         run: flutter analyze
       - name: Run tests
         run: flutter test
+
       - name: Build Android Apk
         run: flutter build apk     
       - name: Build Android App Bundle
         run: flutter build appbundle        
+
+      - name: Download Android keystore
+        id: android_keystore
+        uses: timheuer/base64-to-file@v1.0.3
+        with:
+          fileName: key.jks
+          encodedString: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}        
