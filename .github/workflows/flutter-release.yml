@@ -19,7 +19,8 @@ on:
 # on:
 #   schedule:
 #     cron: '30 5 * * 1'  
-on: workflow_dispatch # Manual    
+on:
+  workflow_dispatch # Manual    
 jobs:
   release:
     name: Test, build and release
