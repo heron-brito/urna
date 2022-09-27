@@ -8,6 +8,8 @@ jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3       
       - run: |
           echo "Log level: $LEVEL"
           echo "Tags: $TAGS"
@@ -16,4 +18,4 @@ jobs:
           LEVEL: ${{ inputs.logLevel }}
           TAGS: ${{ inputs.tags }}
           ENVIRONMENT: ${{ inputs.environment }}
-    uses: ./.github/workflows/flutter-release.yml          
+      - uses: ./.github/workflows/flutter-release.yml          
