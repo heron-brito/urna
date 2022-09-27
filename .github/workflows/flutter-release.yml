@@ -20,7 +20,7 @@ on:
 #   schedule:
 #     cron: '30 5 * * 1'  
 on:
-  workflow_dispatch: # Manual    
+  workflow_dispatch:    
     inputs:
       logLevel:
         description: 'Log level'
