@@ -134,9 +134,10 @@ class _AdminPageState extends State<AdminPage> {
                   Text('Grupo 22 : ${candidato_22}'),
                   Text('Grupo 00 : ${candidato_00}'),
 
-                  SizedBox(
-                    height: 200,
-                    width: 200,
+                  // SizedBox(
+                    // height: 200,
+                    // width: 200,
+                  Expanded(
                     child:ListView(
                       children: emails.map((strone){
                       return Container(

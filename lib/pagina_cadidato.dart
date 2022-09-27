@@ -6,12 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:urna/main.dart';
 // import 'package:audioplayers_windows/'
+import 'package:audioplayers/audioplayers.dart';
 // import 'package:audioplayers/audioplayers.dart';
-// import 'package:audioplayers/audioplayers.dart';
-// import 'package:audioplayers/audio_cache.dart';
 // import 'package:just_audio/just_audio.dart';
-// import 'package:flutter/src/foundation/key.dart';
-// import 'package:flutter/src/widgets/framework.dart';
 
 int algarismo_um = 0;
 int algarismo_dois = 0;
@@ -247,32 +244,33 @@ class _LadoDireitoCandidatoState extends State<LadoDireitoCandidato> {
     return Column( // Lado Direito Candidato
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        // Center(child: Container(
-        //   height: 150,
-        //   width: 400,
-        //   decoration: BoxDecoration(
-        //         border: Border.all(color: Colors.black),
-        //         borderRadius: new BorderRadius.circular(1.0),
-        //         color: Colors.white,
-        //       ), 
-          // child: Row(
-          //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          //   crossAxisAlignment: CrossAxisAlignment.center,
-          //   children: [
-          //     Image.asset('asset/img/brasao.png'),
-          //     Column(
-          //       children: [
-          //         Divider(height:50 , thickness: 0.1),
-          //         // Text(algarismo_um.toString() + algarismo_dois.toString() ),
-          //         Text('JUSTIÇA ',  style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold ),),
-          //         Text('TAMANDARÉ', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold ),),
-          //       ],
-          //     ),
-          //   ],
-          // ),
-          // ),),
+        // Tablet ou Celular -> ate container
         Center(child: Container(
-              height: 450,
+          height: 100,
+          width: 400,
+          decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                borderRadius: new BorderRadius.circular(1.0),
+                color: Colors.white,
+              ), 
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset('asset/img/brasao.png'),
+              Column(
+                children: [
+                  Divider(height:20 , thickness: 0.1),
+                  // Text(algarismo_um.toString() + algarismo_dois.toString() ),
+                  Text('JUSTIÇA ',  style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold ),),
+                  Text('TAMANDARÉ', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold ),),
+                ],
+              ),
+            ],
+          ),
+          ),),
+        Center(child: Container(
+              height: 400,
               // width: double.infinity,            
               width: 400,            
               decoration: BoxDecoration(
@@ -283,12 +281,10 @@ class _LadoDireitoCandidatoState extends State<LadoDireitoCandidato> {
                   ), 
               child: Column(
                 children: [
-                  Row(  children: [ Container(
-                                   height: 50,
-                                   color: Colors.white,
-                                  //  foregroundDecoration: BoxDecoration(color: Colors.white),
-                                  //  decoration: BoxDecoration(color: Colors.white),
-                                   child: Divider(height: 200, thickness: 0.1, color: Colors.white)) ] ),
+                  // Row(  children: [ Container(
+                  //                  height: 50,
+                  //                  color: Colors.white,
+                  //                  child: Divider(height: 50, thickness: 0.1, color: Colors.white)) ] ),
                   Row(  children: [ LinhaUm( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
                   Row(  children: [ LinhaDois( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
                   Row(  children: [ LinhaTres( notifyParent: refreshLadoDireitoCandidatoState ),  ],         ),
@@ -318,29 +314,10 @@ class LinhaUm extends StatefulWidget {
 
 class _LinhaUmState extends State<LinhaUm> {
 
-  // late AudioPlayer player;
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   player = AudioPlayer();
-  // }
-  // @override
-  // void dispose() {
-  //   player.dispose();
-  //   super.dispose();
-  // }
-
 
   void _tocaSomBotao() async {
-    // final player = AudioPlayer();
-    // await player.play(AssetSource('sounds/fim.wav'));    
-
-    // player.play(UrlSource('asset/img/fim.m4a'));
-    // await player.play(AssetSource('asset/img/fim.m4a'));    
-    // await player.play(AssetSource('img/fim.m4a'));    
-
-    // await player.setAsset('assets/soungs/fim.wav');
-    // player.play();
+    final player = AudioPlayer();
+    await player.play(AssetSource('sounds/botao.wav'));    
   }
 
   _onPressedBotao(int digito) {
@@ -394,7 +371,13 @@ class LinhaDois extends StatefulWidget {
 
 class _LinhaDoisState extends State<LinhaDois> {
 
+  void _tocaSomBotao() async {
+    final player = AudioPlayer();
+    await player.play(AssetSource('sounds/botao.wav'));    
+  }
+
   _onPressedBotao(int digito) {
+    _tocaSomBotao();
     setState(() {
       print('onPressdBotao: ' + digito.toString());
       if (algarismo_um_pressionado){
@@ -448,7 +431,13 @@ class LinhaTres extends StatefulWidget {
 
 class _LinhaTresState extends State<LinhaTres> {
 
+  void _tocaSomBotao() async {
+    final player = AudioPlayer();
+    await player.play(AssetSource('sounds/botao.wav'));    
+  }
+
   _onPressedBotao(int digito) {
+    _tocaSomBotao();
     setState(() {
       print('onPressdBotao: ' + digito.toString());
       if (algarismo_um_pressionado){
@@ -504,7 +493,13 @@ class LinhaQuatro extends StatefulWidget {
 
 class _LinhaQuatroState extends State<LinhaQuatro> {
 
+  void _tocaSomBotao() async {
+    final player = AudioPlayer();
+    await player.play(AssetSource('sounds/botao.wav'));    
+  }
+
   _onPressedBotao(int digito) {
+    _tocaSomBotao();
     setState(() {
       print('onPressdBotao: ' + digito.toString());
       if (algarismo_um_pressionado){
@@ -577,6 +572,12 @@ class _LinhaDeBaixo extends State<LinhaDeBaixo> {
     );    
   }
 
+  void _tocaSomBotao() async {
+    final player = AudioPlayer();
+    await player.play(AssetSource('sounds/botao.wav'));    
+  }
+
+
   void _onPressedCancela() {
     print('onPressedCancela');
     algarismo_um = 0;
@@ -587,13 +588,17 @@ class _LinhaDeBaixo extends State<LinhaDeBaixo> {
 
   void _onPressedCorrige() {
     print('onPressedCorrige');
+    // _tocaSomBotao();
     algarismo_um = 0;
     algarismo_dois = 0;    
     algarismo_um_pressionado = false;
     widget.notifyParent();
   }
 
-  void _tocaSom() async {
+  void _tocaSomFim() async {
+    final player = AudioPlayer();
+    // await player.play(AssetSource('sounds/botao.wav'));    
+    await player.play(AssetSource('sounds/fim.wav'));    
     // final player = AudioPlayer();
     // player.play(UrlSource('asset/img/fim.m4a'));
     // await player.play(AssetSource('sounds/note1.wave'));    
@@ -632,8 +637,8 @@ class _LinhaDeBaixo extends State<LinhaDeBaixo> {
 
     if ( grupo == 17 || grupo == 18 || grupo == 25 || grupo == 31 || grupo == 76 || grupo == 95) {
       _onPressedCorrige();
-      // _tocaSom();
-      // sleep(Duration(seconds: 2) );
+      _tocaSomFim();
+      sleep(Duration(seconds: 2) );
       vaiParaTelaInicial();
     } else {
        final snackBar = SnackBar(
