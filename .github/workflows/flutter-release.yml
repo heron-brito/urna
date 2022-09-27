@@ -1,3 +1,13 @@
+# Source documentation example
+# https://medium.com/flutter-community/automating-publishing-your-flutter-apps-to-google-play-using-github-actions-2f67ac582032
+# Secrets necessárias
+# ANDROID_KEYSTORE_BASE64
+# ANDROID_KEYSTORE_PASSWORD
+# ANDROID_KEY_ALIAS
+# ANDROID_KEY_PASSWORD
+# ANDROID_PACKAGE_NAME
+# GOOGLE_SERVICE_ACCOUNT_KEY
+
 name: Flutter release
 on:
   release:
@@ -7,8 +17,8 @@ on:
   pull_request:
   #   branches: [ "main" , "versao-1.0", "versao-2.0" , "versao-2.1"]    
 jobs:
-  dependencies:
-    name: Download and install depedency
+  release:
+    name: Test, build and release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,11 +35,11 @@ jobs:
       - name: Flutter version
         run: flutter --version
 
-  build:
-    needs: [ dependencies ]
-    name: Test, build and release
-    runs-on: ubuntu-latest
-    steps:
+  # build:
+  #   needs: [ dependencies ]
+  #   name: Test, build and release
+  #   runs-on: ubuntu-latest
+  #   steps:
       - name: Cache pub dependencies
         uses: actions/cache@v2
         with:
@@ -47,12 +57,47 @@ jobs:
 
       - name: Build Android Apk
         run: flutter build apk     
-      - name: Build Android App Bundle
-        run: flutter build appbundle        
 
+  # publish:
+  #   needs: [ build ]
+  #   name: Release
+  #   runs-on: ubuntu-latest
+  #   steps:
       - name: Download Android keystore
         id: android_keystore
         uses: timheuer/base64-to-file@v1.0.3
         with:
           fileName: key.jks
           encodedString: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}        
+      - name: Create key.properties
+        run: |
+          echo "storeFile=${{ steps.android_keystore.outputs.filePath }}" > android/key.properties
+          echo "storePassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}" >> android/key.properties
+          echo "keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}" >> android/key.properties
+          echo "keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}" >> android/key.properties          
+      - name: Build Android App Bundle
+        run: flutter build appbundle        
+
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.6'
+      - name: Cache bundle dependencies
+        uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: ${{ runner.os }}-gems-
+      - name: Download bundle dependencies
+        run: |
+          gem install bundler:2.0.2
+          bundle config path vendor/bundle
+          bundle install        
+      - name: Release to Google Play (beta)
+        env:
+          SUPPLY_PACKAGE_NAME: ${{ secrets.ANDROID_PACKAGE_NAME }}
+          SUPPLY_JSON_KEY_DATA: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+        run: |
+          bundle exec fastlane supply \
+          --aab build/app/outputs/bundle/release/app-release.aab \
+          --track beta
