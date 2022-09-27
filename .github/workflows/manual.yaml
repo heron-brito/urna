@@ -1,4 +1,5 @@
-name: Flutter Manual Release
+  name: Flutter Manual Release
+
 on:
   workflow_dispatch:
     inputs:
