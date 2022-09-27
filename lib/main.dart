@@ -121,6 +121,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 50,
                   child: TextField(
                     controller: myController,
+                    // autofocus: true,
+                    // clipBehavior: Clip.none,
+                    key: const Key('votar'),
                   ),
                 ),
                 // const SizedBox(
@@ -138,6 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 //   )),
                 TextButton(
                   onPressed: onPressedVotar, 
+                  key: Key('navigarParaPaginaCandidatoKey'),
                   child: const Text(
                     'Votar !',
                     style: TextStyle(
