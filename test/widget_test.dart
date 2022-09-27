@@ -23,7 +23,7 @@ void main() {
     // await tester.tap(find.byIcon(Icons.add));
     await tester.enterText(find.byType(TextField),'a@aol.com');
     await tester.tap(find.byType(TextButton));
-    await tester.pump();
+    await tester.pump(Duration(seconds: 5));
 
     // Verify that our counter has incremented.
     // expect(find.text('0'), findsNothing);
