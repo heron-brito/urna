@@ -22,8 +22,9 @@ void main() {
     // Tap the '+' icon and trigger a frame.
     // await tester.tap(find.byIcon(Icons.add));
     await tester.enterText(find.byType(TextField),'a@aol.com');
+    await tester.pump(Duration(milliseconds: 400));
     await tester.tap(find.byType(TextButton));
-    await tester.pump(Duration(seconds: 5));
+    await tester.pump(Duration(milliseconds: 400));
 
     // Verify that our counter has incremented.
     // expect(find.text('0'), findsNothing);
