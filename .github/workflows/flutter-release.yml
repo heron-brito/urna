@@ -7,7 +7,7 @@ on:
   pull_request:
   #   branches: [ "main" , "versao-1.0", "versao-2.0" , "versao-2.1"]    
 jobs:
-  dependences:
+  dependencies:
     name: Download and install depedency
     runs-on: ubuntu-latest
     steps:
@@ -26,6 +26,7 @@ jobs:
         run: flutter --version
 
   build:
+    needs: [ dependencies ]
     name: Test, build and release
     runs-on: ubuntu-latest
     steps:
