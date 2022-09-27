@@ -28,6 +28,7 @@ jobs:
   build:
     name: Test, build and release
     runs-on: ubuntu-latest
+    steps:
       - name: Cache pub dependencies
         uses: actions/cache@v2
         with:
