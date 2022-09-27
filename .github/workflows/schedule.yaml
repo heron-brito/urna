@@ -14,6 +14,7 @@ on:
       tags:
         description: 'Test scenario tags'
         required: false
+        default: true
         type: boolean
       environment:
         description: 'Environment to run tests against'

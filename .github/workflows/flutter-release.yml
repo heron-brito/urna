@@ -83,9 +83,9 @@ jobs:
       - name: Run build_runner
         run: flutter pub run build_runner build --delete-conflicting-outputs        
       - name: Run analyzer
-        run: flutter analyze
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings --congratulate --preamble
       - name: Run tests
-        run: flutter test
+        run: flutter test -v
 
       - name: Build Android Apk
         run: flutter build apk     
