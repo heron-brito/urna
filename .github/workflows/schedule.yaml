@@ -5,7 +5,7 @@ on:
     - cron: "*/5 * * * *"
 
 jobs:
-  log-the-inputs:
+  cron:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
