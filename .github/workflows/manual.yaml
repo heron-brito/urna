@@ -1,4 +1,4 @@
-  name: Flutter Manual Release
+name: Flutter Manual Release
 
 on:
   workflow_dispatch:
@@ -33,4 +33,4 @@ jobs:
           LEVEL: ${{ inputs.logLevel }}
           TAGS: ${{ inputs.tags }}
           ENVIRONMENT: ${{ inputs.environment }}
-    uses: ./.github/workflows/flutter-release.yml
+      uses: ./.github/workflows/flutter-release.yml
