@@ -6,9 +6,19 @@ import 'package:urna/pagina_admin.dart';
 import 'package:urna/pagina_cadidato.dart';
 // import './dbprovider.dart';
 // import './eleitores_model.dart';
+import 'package:window_size/window_size.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+
+  if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+    setWindowTitle('Urna Eletrônica');
+    // setWindowMinSize(const Size(800, 1280)); //Tablet Galaxy 10.1
+    setWindowMaxSize(const Size(1280, 800)); //Tablet Galaxy 10.1
+    // setWindowMinSize(const Size(320, 200)); //Tablet Galaxy 10.1
+    // setWindowMaxSize(Size.infinite);
+  }
+
   runApp(const MyApp());
 
   // List<String> emails = ['a@a.com', ];
