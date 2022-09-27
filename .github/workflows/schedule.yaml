@@ -1,8 +1,8 @@
-name: Flutter Manual Scheduled
+#name: Flutter Manual Scheduled
 on:
   schedule:
     # cron: '30 5 * * 1'          
-    cron: '12 * * * *'          
+    cron: '27 * * * *'          
 
 jobs:
   log-the-inputs:
