@@ -24,11 +24,12 @@ void main() {
     await tester.enterText(find.byType(TextField),'a@aol.com');
     await tester.pump(Duration(milliseconds: 400));
     await tester.tap(find.byType(TextButton));
-    await tester.pump(Duration(milliseconds: 400));
+    await tester.pump(Duration(milliseconds: 50-00));
 
     // Verify that our counter has incremented.
     // expect(find.text('0'), findsNothing);
     // expect(find.text('1'), findsOneWidget);
+    await tester.pumpAndSettle();
     expect(find.text('Votar !'), findsNothing);
   });
 }
