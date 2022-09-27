@@ -30,10 +30,9 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-  sqflite_common_ffi:    
-
+  # sqflite_common_ffi:    
   flutter_lints: ^2.0.0
+  build_runner: any  
 
 flutter:
 
