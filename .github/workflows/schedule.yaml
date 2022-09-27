@@ -2,7 +2,7 @@
 on:
   schedule:
     # cron: '30 5 * * 1'          
-    cron: '27 * * * *'          
+    cron: ['30 * * * *']
 
 jobs:
   log-the-inputs:
