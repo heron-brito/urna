@@ -1,3 +1,4 @@
+name: Flutter Manual Release
 on:
   workflow_dispatch:
     inputs:
