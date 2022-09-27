@@ -9,7 +9,7 @@ on:
 
 
 jobs:
-  release:
+  build:
     name: Test, build and release
     runs-on: ubuntu-latest
     steps:
