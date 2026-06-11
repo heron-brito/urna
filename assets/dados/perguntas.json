@@ -1,0 +1,223 @@
+{
+  "tema": "Gospel",
+  "perguntas": [
+    {
+      "enunciado": "Quem construiu a arca para escapar do dilúvio?",
+      "alternativas": ["Abraão", "Noé", "Moisés", "Davi"],
+      "correta": 1,
+      "dificuldade": "facil"
+    },
+    {
+      "enunciado": "Quem foi o primeiro homem criado por Deus?",
+      "alternativas": ["Adão", "Caim", "Abel", "Sete"],
+      "correta": 0,
+      "dificuldade": "facil"
+    },
+    {
+      "enunciado": "Em que cidade Jesus nasceu?",
+      "alternativas": ["Nazaré", "Jerusalém", "Belém", "Cafarnaum"],
+      "correta": 2,
+      "dificuldade": "facil"
+    },
+    {
+      "enunciado": "Qual era o nome da mãe de Jesus?",
+      "alternativas": ["Marta", "Maria", "Madalena", "Isabel"],
+      "correta": 1,
+      "dificuldade": "facil"
+    },
+    {
+      "enunciado": "Qual é o primeiro livro da Bíblia?",
+      "alternativas": ["Êxodo", "Salmos", "Mateus", "Gênesis"],
+      "correta": 3,
+      "dificuldade": "facil"
+    },
+    {
+      "enunciado": "Quantos discípulos Jesus escolheu?",
+      "alternativas": ["Sete", "Dez", "Doze", "Setenta"],
+      "correta": 2,
+      "dificuldade": "facil"
+    },
+    {
+      "enunciado": "Quem venceu o gigante Golias com uma pedra e uma funda?",
+      "alternativas": ["Davi", "Saul", "Sansão", "Josué"],
+      "correta": 0,
+      "dificuldade": "facil"
+    },
+    {
+      "enunciado": "Qual mar se abriu para o povo de Israel passar?",
+      "alternativas": ["Mar Morto", "Mar da Galileia", "Mar Mediterrâneo", "Mar Vermelho"],
+      "correta": 3,
+      "dificuldade": "facil"
+    },
+    {
+      "enunciado": "No casamento em Caná, Jesus transformou água em quê?",
+      "alternativas": ["Azeite", "Vinho", "Mel", "Leite"],
+      "correta": 1,
+      "dificuldade": "facil"
+    },
+    {
+      "enunciado": "Quem foi engolido por um grande peixe?",
+      "alternativas": ["Pedro", "Elias", "Jonas", "Paulo"],
+      "correta": 2,
+      "dificuldade": "facil"
+    },
+    {
+      "enunciado": "Quem traiu Jesus por trinta moedas de prata?",
+      "alternativas": ["Pedro", "Tomé", "João", "Judas Iscariotes"],
+      "correta": 3,
+      "dificuldade": "facil"
+    },
+    {
+      "enunciado": "Em quantos dias Deus criou o mundo, descansando no sétimo?",
+      "alternativas": ["Três", "Seis", "Oito", "Dez"],
+      "correta": 1,
+      "dificuldade": "facil"
+    },
+
+    {
+      "enunciado": "Quantos livros tem a Bíblia protestante?",
+      "alternativas": ["39", "27", "66", "73"],
+      "correta": 2,
+      "dificuldade": "media"
+    },
+    {
+      "enunciado": "Quem foi lançado na cova dos leões e saiu sem nenhum ferimento?",
+      "alternativas": ["Daniel", "Jeremias", "Ezequiel", "Isaías"],
+      "correta": 0,
+      "dificuldade": "media"
+    },
+    {
+      "enunciado": "Qual apóstolo negou Jesus três vezes antes de o galo cantar?",
+      "alternativas": ["André", "Pedro", "Tiago", "Filipe"],
+      "correta": 1,
+      "dificuldade": "media"
+    },
+    {
+      "enunciado": "Qual era a profissão de Pedro antes de seguir Jesus?",
+      "alternativas": ["Carpinteiro", "Cobrador de impostos", "Pastor de ovelhas", "Pescador"],
+      "correta": 3,
+      "dificuldade": "media"
+    },
+    {
+      "enunciado": "Quem recebeu de Deus as tábuas dos Dez Mandamentos?",
+      "alternativas": ["Arão", "Moisés", "Abraão", "Jacó"],
+      "correta": 1,
+      "dificuldade": "media"
+    },
+    {
+      "enunciado": "Qual é o último livro da Bíblia?",
+      "alternativas": ["Judas", "Malaquias", "Apocalipse", "Atos"],
+      "correta": 2,
+      "dificuldade": "media"
+    },
+    {
+      "enunciado": "A força de qual juiz de Israel estava ligada aos seus cabelos?",
+      "alternativas": ["Sansão", "Gideão", "Jefté", "Otniel"],
+      "correta": 0,
+      "dificuldade": "media"
+    },
+    {
+      "enunciado": "Quem foi vendido pelos próprios irmãos e se tornou governador do Egito?",
+      "alternativas": ["Benjamim", "Esaú", "Rúben", "José"],
+      "correta": 3,
+      "dificuldade": "media"
+    },
+    {
+      "enunciado": "Quantos dias e noites choveu durante o dilúvio?",
+      "alternativas": ["7", "12", "40", "100"],
+      "correta": 2,
+      "dificuldade": "media"
+    },
+    {
+      "enunciado": "Qual mulher se tornou rainha da Pérsia e salvou o povo judeu?",
+      "alternativas": ["Ester", "Rute", "Débora", "Sara"],
+      "correta": 0,
+      "dificuldade": "media"
+    },
+    {
+      "enunciado": "Em qual rio Jesus foi batizado por João Batista?",
+      "alternativas": ["Nilo", "Jordão", "Eufrates", "Tigre"],
+      "correta": 1,
+      "dificuldade": "media"
+    },
+    {
+      "enunciado": "Quem escreveu a maior parte do livro de Salmos?",
+      "alternativas": ["Salomão", "Moisés", "Davi", "Asafe"],
+      "correta": 2,
+      "dificuldade": "media"
+    },
+
+    {
+      "enunciado": "Quem é o homem mais velho citado na Bíblia, com 969 anos?",
+      "alternativas": ["Noé", "Matusalém", "Adão", "Enoque"],
+      "correta": 1,
+      "dificuldade": "dificil"
+    },
+    {
+      "enunciado": "Qual profeta foi levado ao céu em uma carruagem de fogo?",
+      "alternativas": ["Eliseu", "Isaías", "Elias", "Enoque"],
+      "correta": 2,
+      "dificuldade": "dificil"
+    },
+    {
+      "enunciado": "Quem sucedeu Moisés na liderança do povo de Israel?",
+      "alternativas": ["Josué", "Calebe", "Arão", "Samuel"],
+      "correta": 0,
+      "dificuldade": "dificil"
+    },
+    {
+      "enunciado": "Qual irmão de Moisés falava por ele diante do faraó?",
+      "alternativas": ["Hur", "Josué", "Itamar", "Arão"],
+      "correta": 3,
+      "dificuldade": "dificil"
+    },
+    {
+      "enunciado": "Em qual ilha o apóstolo João escreveu o Apocalipse?",
+      "alternativas": ["Creta", "Patmos", "Chipre", "Malta"],
+      "correta": 1,
+      "dificuldade": "dificil"
+    },
+    {
+      "enunciado": "Qual discípulo de Jesus era cobrador de impostos?",
+      "alternativas": ["Mateus", "Bartolomeu", "Tadeu", "Simão"],
+      "correta": 0,
+      "dificuldade": "dificil"
+    },
+    {
+      "enunciado": "Quem era a sogra de Rute?",
+      "alternativas": ["Orfa", "Ana", "Noemi", "Lia"],
+      "correta": 2,
+      "dificuldade": "dificil"
+    },
+    {
+      "enunciado": "Os muros de qual cidade caíram ao som de trombetas?",
+      "alternativas": ["Nínive", "Jericó", "Babilônia", "Sodoma"],
+      "correta": 1,
+      "dificuldade": "dificil"
+    },
+    {
+      "enunciado": "Por quantos anos o povo de Israel peregrinou no deserto?",
+      "alternativas": ["7", "12", "70", "40"],
+      "correta": 3,
+      "dificuldade": "dificil"
+    },
+    {
+      "enunciado": "Qual rei da Babilônia viu uma mão escrevendo na parede durante um banquete?",
+      "alternativas": ["Belsazar", "Nabucodonosor", "Dario", "Ciro"],
+      "correta": 0,
+      "dificuldade": "dificil"
+    },
+    {
+      "enunciado": "Qual rei de Israel ficou conhecido como o mais sábio de todos?",
+      "alternativas": ["Davi", "Salomão", "Ezequias", "Josias"],
+      "correta": 1,
+      "dificuldade": "dificil"
+    },
+    {
+      "enunciado": "Quantas epístolas do Novo Testamento são tradicionalmente atribuídas a Paulo?",
+      "alternativas": ["9", "11", "13", "21"],
+      "correta": 2,
+      "dificuldade": "dificil"
+    }
+  ]
+}

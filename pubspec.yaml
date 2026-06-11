@@ -42,3 +42,5 @@ flutter:
   assets:
     - asset/img/
     - assets/sounds/
+    - assets/sounds/sdm/
+    - assets/dados/
