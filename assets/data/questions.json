@@ -1,0 +1,277 @@
+{
+  "version": 1,
+  "questions": [
+    {
+      "id": 1,
+      "difficulty": "facil",
+      "question": "Quem construiu a arca para salvar sua família e os animais do dilúvio?",
+      "options": ["Moisés", "Noé", "Abraão", "Davi"],
+      "correctIndex": 1,
+      "reference": "Gênesis 6:14",
+      "explanation": "Deus ordenou que Noé construísse uma arca de madeira de cipreste."
+    },
+    {
+      "id": 2,
+      "difficulty": "facil",
+      "question": "Em quantos dias Deus criou os céus e a terra, descansando no sétimo?",
+      "options": ["Sete", "Três", "Quarenta", "Doze"],
+      "correctIndex": 0,
+      "reference": "Gênesis 2:2",
+      "explanation": "Deus criou tudo em seis dias e descansou no sétimo dia."
+    },
+    {
+      "id": 3,
+      "difficulty": "facil",
+      "question": "Qual era a profissão de José, o pai terreno de Jesus?",
+      "options": ["Pescador", "Pastor", "Carpinteiro", "Médico"],
+      "correctIndex": 2,
+      "reference": "Mateus 13:55",
+      "explanation": "José era carpinteiro, e Jesus também aprendeu o ofício."
+    },
+    {
+      "id": 4,
+      "difficulty": "facil",
+      "question": "Em qual cidade Jesus nasceu?",
+      "options": ["Nazaré", "Jerusalém", "Belém", "Cafarnaum"],
+      "correctIndex": 2,
+      "reference": "Mateus 2:1",
+      "explanation": "Jesus nasceu em Belém da Judeia, conforme as profecias."
+    },
+    {
+      "id": 5,
+      "difficulty": "facil",
+      "question": "Quantos discípulos Jesus escolheu para serem seus apóstolos?",
+      "options": ["Sete", "Dez", "Doze", "Quinze"],
+      "correctIndex": 2,
+      "reference": "Mateus 10:1",
+      "explanation": "Jesus escolheu doze apóstolos para acompanhá-lo."
+    },
+    {
+      "id": 6,
+      "difficulty": "facil",
+      "question": "Qual mar Moisés abriu para que o povo de Israel atravessasse?",
+      "options": ["Mar Morto", "Mar Vermelho", "Mar da Galileia", "Mar Mediterrâneo"],
+      "correctIndex": 1,
+      "reference": "Êxodo 14:21",
+      "explanation": "Deus, por meio de Moisés, abriu o Mar Vermelho."
+    },
+    {
+      "id": 7,
+      "difficulty": "facil",
+      "question": "Quem foi lançado na cova dos leões e saiu ileso?",
+      "options": ["Daniel", "Jonas", "Elias", "Sansão"],
+      "correctIndex": 0,
+      "reference": "Daniel 6:22",
+      "explanation": "Deus enviou seu anjo e fechou a boca dos leões para livrar Daniel."
+    },
+    {
+      "id": 8,
+      "difficulty": "facil",
+      "question": "Qual jovem derrotou o gigante Golias com uma funda e uma pedra?",
+      "options": ["Salomão", "Saul", "Davi", "Josué"],
+      "correctIndex": 2,
+      "reference": "1 Samuel 17:50",
+      "explanation": "Davi venceu Golias confiando no nome do Senhor."
+    },
+    {
+      "id": 9,
+      "difficulty": "facil",
+      "question": "Qual era o primeiro livro da Bíblia?",
+      "options": ["Êxodo", "Salmos", "Gênesis", "João"],
+      "correctIndex": 2,
+      "reference": "Gênesis 1:1",
+      "explanation": "Gênesis significa 'origem' e narra a criação do mundo."
+    },
+    {
+      "id": 10,
+      "difficulty": "facil",
+      "question": "Quem foi engolido por um grande peixe ao fugir de Deus?",
+      "options": ["Jonas", "Pedro", "Paulo", "Jó"],
+      "correctIndex": 0,
+      "reference": "Jonas 1:17",
+      "explanation": "Jonas ficou três dias e três noites no ventre do peixe."
+    },
+
+    {
+      "id": 11,
+      "difficulty": "medio",
+      "question": "Quem traiu Jesus por trinta moedas de prata?",
+      "options": ["Pedro", "Tomé", "Judas Iscariotes", "Tiago"],
+      "correctIndex": 2,
+      "reference": "Mateus 26:15",
+      "explanation": "Judas Iscariotes entregou Jesus aos sacerdotes por trinta moedas."
+    },
+    {
+      "id": 12,
+      "difficulty": "medio",
+      "question": "Qual rei de Israel é conhecido por sua grande sabedoria?",
+      "options": ["Saul", "Salomão", "Davi", "Ezequias"],
+      "correctIndex": 1,
+      "reference": "1 Reis 3:12",
+      "explanation": "Deus concedeu a Salomão um coração sábio e inteligente."
+    },
+    {
+      "id": 13,
+      "difficulty": "medio",
+      "question": "Quem batizou Jesus no rio Jordão?",
+      "options": ["João Batista", "Pedro", "André", "Filipe"],
+      "correctIndex": 0,
+      "reference": "Mateus 3:13",
+      "explanation": "João Batista batizou Jesus no rio Jordão."
+    },
+    {
+      "id": 14,
+      "difficulty": "medio",
+      "question": "Quantos panes e peixes Jesus usou para alimentar a multidão de cinco mil?",
+      "options": ["Sete pães e dois peixes", "Cinco pães e dois peixes", "Dois pães e cinco peixes", "Doze pães e três peixes"],
+      "correctIndex": 1,
+      "reference": "João 6:9",
+      "explanation": "Com cinco pães e dois peixes Jesus alimentou cinco mil homens."
+    },
+    {
+      "id": 15,
+      "difficulty": "medio",
+      "question": "Qual era o nome do monte onde Moisés recebeu os Dez Mandamentos?",
+      "options": ["Monte Carmelo", "Monte das Oliveiras", "Monte Sinai", "Monte Sião"],
+      "correctIndex": 2,
+      "reference": "Êxodo 19:20",
+      "explanation": "Moisés subiu ao Monte Sinai para receber a Lei."
+    },
+    {
+      "id": 16,
+      "difficulty": "medio",
+      "question": "Quem negou Jesus três vezes antes do galo cantar?",
+      "options": ["João", "Pedro", "Mateus", "Bartolomeu"],
+      "correctIndex": 1,
+      "reference": "Mateus 26:75",
+      "explanation": "Pedro negou Jesus três vezes, como havia sido predito."
+    },
+    {
+      "id": 17,
+      "difficulty": "medio",
+      "question": "Qual apóstolo era um cobrador de impostos antes de seguir Jesus?",
+      "options": ["Mateus", "Lucas", "Estêvão", "Barnabé"],
+      "correctIndex": 0,
+      "reference": "Mateus 9:9",
+      "explanation": "Mateus deixou a coleta de impostos para seguir Jesus."
+    },
+    {
+      "id": 18,
+      "difficulty": "medio",
+      "question": "Quem teve uma paciência exemplar mesmo perdendo tudo o que tinha?",
+      "options": ["Jó", "Jeremias", "Oseias", "Naum"],
+      "correctIndex": 0,
+      "reference": "Jó 1:21",
+      "explanation": "Jó permaneceu fiel a Deus mesmo em meio ao sofrimento."
+    },
+    {
+      "id": 19,
+      "difficulty": "medio",
+      "question": "Qual era o nome da mãe de Jesus?",
+      "options": ["Marta", "Maria", "Ana", "Isabel"],
+      "correctIndex": 1,
+      "reference": "Lucas 1:31",
+      "explanation": "Maria foi escolhida por Deus para ser a mãe de Jesus."
+    },
+    {
+      "id": 20,
+      "difficulty": "medio",
+      "question": "Em qual livro encontramos os Dez Mandamentos pela primeira vez?",
+      "options": ["Gênesis", "Levítico", "Êxodo", "Números"],
+      "correctIndex": 2,
+      "reference": "Êxodo 20:1-17",
+      "explanation": "Os Dez Mandamentos são apresentados em Êxodo 20."
+    },
+
+    {
+      "id": 21,
+      "difficulty": "dificil",
+      "question": "Qual profeta foi levado ao céu em um carro de fogo?",
+      "options": ["Eliseu", "Elias", "Isaías", "Ezequiel"],
+      "correctIndex": 1,
+      "reference": "2 Reis 2:11",
+      "explanation": "Elias subiu ao céu num redemoinho com um carro de fogo."
+    },
+    {
+      "id": 22,
+      "difficulty": "dificil",
+      "question": "Qual era o nome original do apóstolo Paulo antes de sua conversão?",
+      "options": ["Silas", "Saulo", "Simão", "Sóstenes"],
+      "correctIndex": 1,
+      "reference": "Atos 9:4",
+      "explanation": "Saulo de Tarso perseguia os cristãos antes de se converter no caminho de Damasco."
+    },
+    {
+      "id": 23,
+      "difficulty": "dificil",
+      "question": "Quantos anos o povo de Israel peregrinou pelo deserto?",
+      "options": ["Quarenta anos", "Sete anos", "Doze anos", "Setenta anos"],
+      "correctIndex": 0,
+      "reference": "Números 14:33",
+      "explanation": "Israel peregrinou quarenta anos no deserto antes de entrar na Terra Prometida."
+    },
+    {
+      "id": 24,
+      "difficulty": "dificil",
+      "question": "Qual mulher se tornou rainha e salvou seu povo do extermínio?",
+      "options": ["Rute", "Débora", "Ester", "Mical"],
+      "correctIndex": 2,
+      "reference": "Ester 7:3",
+      "explanation": "A rainha Ester intercedeu corajosamente pelo povo judeu."
+    },
+    {
+      "id": 25,
+      "difficulty": "dificil",
+      "question": "Qual o último livro da Bíblia?",
+      "options": ["Judas", "Apocalipse", "3 João", "Hebreus"],
+      "correctIndex": 1,
+      "reference": "Apocalipse 22:21",
+      "explanation": "Apocalipse, escrito por João, encerra a Bíblia com a revelação de Jesus."
+    },
+    {
+      "id": 26,
+      "difficulty": "dificil",
+      "question": "Qual juiz de Israel tinha força extraordinária ligada aos seus cabelos?",
+      "options": ["Gideão", "Sansão", "Jefté", "Otniel"],
+      "correctIndex": 1,
+      "reference": "Juízes 16:17",
+      "explanation": "A força de Sansão estava ligada ao voto nazireu e aos seus cabelos."
+    },
+    {
+      "id": 27,
+      "difficulty": "dificil",
+      "question": "Quem sucedeu Moisés na liderança e conduziu Israel à Terra Prometida?",
+      "options": ["Calebe", "Arão", "Josué", "Samuel"],
+      "correctIndex": 2,
+      "reference": "Josué 1:2",
+      "explanation": "Josué liderou a travessia do Jordão e a conquista de Canaã."
+    },
+    {
+      "id": 28,
+      "difficulty": "dificil",
+      "question": "Quantos livros há na Bíblia protestante completa?",
+      "options": ["66", "73", "50", "27"],
+      "correctIndex": 0,
+      "reference": "Cânon bíblico",
+      "explanation": "São 39 livros no Antigo Testamento e 27 no Novo, totalizando 66."
+    },
+    {
+      "id": 29,
+      "difficulty": "dificil",
+      "question": "Qual discípulo é conhecido por duvidar da ressurreição até tocar em Jesus?",
+      "options": ["André", "Tomé", "Felipe", "Tadeu"],
+      "correctIndex": 1,
+      "reference": "João 20:27",
+      "explanation": "Tomé só creu depois de ver as marcas dos pregos em Jesus."
+    },
+    {
+      "id": 30,
+      "difficulty": "dificil",
+      "question": "Em qual monte Elias desafiou os profetas de Baal?",
+      "options": ["Monte Sinai", "Monte Horebe", "Monte Carmelo", "Monte Nebo"],
+      "correctIndex": 2,
+      "reference": "1 Reis 18:19",
+      "explanation": "No Monte Carmelo, o fogo do Senhor consumiu o sacrifício de Elias."
+    }
+  ]
+}

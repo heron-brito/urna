@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.urna">
    <application
-        android:label="urna"
+        android:label="Quiz Gospel do Milhão"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
