@@ -12,6 +12,11 @@ on:
     tags:
       - 'v*' # ex.: v1.0.0 -> cria um Release com o APK anexado
   workflow_dispatch: # permite rodar manualmente pela aba Actions
+    inputs:
+      release_tag:
+        description: 'Se preenchido (ex.: v1.0.0), cria um Release com o APK anexado'
+        required: false
+        default: ''
   release:
     types: [published] # ao publicar um release, anexa o APK
 
@@ -59,10 +64,15 @@ jobs:
           if-no-files-found: error
 
       - name: Publish APK to release
-        # roda ao publicar um release OU ao dar push numa tag v* (cria o release)
-        if: github.event_name == 'release' || startsWith(github.ref, 'refs/tags/v')
+        # roda ao: publicar um release; dar push numa tag v*; ou disparar
+        # manualmente informando um release_tag (cria a tag + o release).
+        if: >-
+          github.event_name == 'release' ||
+          startsWith(github.ref, 'refs/tags/v') ||
+          (github.event_name == 'workflow_dispatch' && inputs.release_tag != '')
         uses: softprops/action-gh-release@v2
         with:
-          name: Quiz Gospel do Milhão ${{ github.ref_name }}
+          tag_name: ${{ inputs.release_tag || github.ref_name }}
+          name: Quiz Gospel do Milhão ${{ inputs.release_tag || github.ref_name }}
           generate_release_notes: true
           files: build/app/outputs/flutter-apk/app-release.apk
