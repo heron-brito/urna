@@ -1,0 +1,60 @@
+name: Build APK
+
+# Gera o APK do Quiz Gospel do Milhão.
+# Os runners do GitHub têm acesso ao Android SDK e ao Google Maven
+# (dl.google.com), então o build Android roda sem problemas aqui.
+
+on:
+  push:
+    branches:
+      - claude/gospel-quiz-flutter-app-lojax3
+      - main
+  workflow_dispatch: # permite rodar manualmente pela aba Actions
+  release:
+    types: [published] # ao publicar um release, anexa o APK
+
+jobs:
+  build-apk:
+    name: Build Android APK
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.44.2
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Run tests
+        run: flutter test
+
+      - name: Build release APK
+        run: flutter build apk --release
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: quiz-gospel-do-milhao-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+          if-no-files-found: error
+
+      - name: Attach APK to release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/app/outputs/flutter-apk/app-release.apk
